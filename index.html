@@ -1,0 +1,3310 @@
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>منارة المتوسط | المنصة الرسمية لأساتذة وإدارة التعليم المتوسط - الجزائر</title>
+  
+  <!-- Tailwind CSS & Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            cairo: ['Cairo', 'sans-serif'],
+            taj: ['Tajawal', 'sans-serif']
+          },
+          colors: {
+            dzgreen: {
+              50: '#eef8f3',
+              100: '#d7f0e2',
+              200: '#b2e1c8',
+              300: '#7ecaa7',
+              400: '#48ae84',
+              500: '#0B6B4A',
+              600: '#08573c',
+              700: '#064630',
+              800: '#053827',
+              900: '#032319',
+            },
+            gold: {
+              400: '#F0D061',
+              500: '#C9A227',
+              600: '#A4821A',
+            },
+            ink: '#0F1E2E'
+          },
+          boxShadow: {
+            soft: '0 20px 50px -12px rgba(11,107,74,0.18)',
+            card: '0 12px 35px -8px rgba(15,30,46,0.08)',
+            elevation: '0 25px 60px -15px rgba(3,35,25,0.22)'
+          }
+        }
+      }
+    }
+  </script>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    * { font-family: 'Cairo', sans-serif; }
+    body { background: #F8FAF9; overflow-x: hidden; color: #1e293b; }
+    
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #f1f5f3; }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(#0B6B4A, #C9A227); border-radius: 999px; }
+
+    /* Custom Aesthetics */
+    .hero-bg {
+      background: radial-gradient(900px 500px at 85% 15%, rgba(201,162,39,0.22), transparent),
+                  radial-gradient(750px 450px at 15% 85%, rgba(11,107,74,0.3), transparent),
+                  linear-gradient(135deg, #021a13 0%, #064630 45%, #0B6B4A 80%, #0d7954 100%);
+    }
+    
+    .pattern-grid {
+      background-image: radial-gradient(rgba(255,255,255,0.14) 1.5px, transparent 1.5px);
+      background-size: 24px 24px;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(11, 107, 74, 0.08);
+    }
+
+    .card-hover {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .card-hover:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 22px 45px -10px rgba(11, 107, 74, 0.2);
+    }
+
+    .btn-shine {
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-shine::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(100deg, transparent, rgba(255,255,255,0.45), transparent);
+      transform: skewX(-25deg);
+      transition: 0.65s;
+    }
+    .btn-shine:hover::after {
+      left: 140%;
+    }
+
+    .tab-btn.active {
+      background: #0B6B4A;
+      color: #ffffff;
+      box-shadow: 0 10px 25px -6px rgba(11,107,74,0.45);
+    }
+
+    .side-link.active {
+      background: linear-gradient(135deg, #0B6B4A, #08573c);
+      color: #fff;
+      font-weight: 700;
+      box-shadow: 0 8px 20px -5px rgba(11,107,74,0.4);
+    }
+    .side-link.active i {
+      color: #F0D061 !important;
+    }
+
+    .badge-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .doc-paper {
+      background: #fff;
+      background-image: linear-gradient(#ffffff 0%, #FAF8F0 100%);
+      border: 1px solid #E2DAC5;
+      box-shadow: 0 14px 35px -12px rgba(45,35,15,0.12);
+    }
+
+    .stamp-badge {
+      border: 2px dashed #0B6B4A;
+      color: #0B6B4A;
+      font-weight: 900;
+      transform: rotate(-6deg);
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 6px;
+    }
+
+    .dot-pulse {
+      position: relative;
+    }
+    .dot-pulse::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 999px;
+      border: 2px solid #22c55e;
+      animation: ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+    @keyframes ping {
+      75%, 100% { transform: scale(1.6); opacity: 0; }
+    }
+
+    .marquee {
+      display: flex;
+      gap: 2rem;
+      animation: marq 36s linear infinite;
+      width: max-content;
+    }
+    @keyframes marq {
+      to { transform: translateX(50%); }
+    }
+
+    @media print {
+      .no-print { display: none !important; }
+      body { background: #ffffff !important; }
+      .print-only { display: block !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= TOP OFFICIAL BANNER ================= -->
+  <div class="bg-[#021a13] text-white text-[12px] py-2 px-4 no-print border-b border-emerald-900/40">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="w-6 h-4 rounded overflow-hidden flex flex-col border border-white/20 shadow-sm">
+          <span class="h-1/2 bg-[#006233]"></span>
+          <span class="h-1/2 bg-white relative flex items-center justify-center">
+            <span class="text-[#D21034] text-[9px] leading-none absolute -top-1">★</span>
+          </span>
+        </span>
+        <span class="font-extrabold tracking-wide">الجمهورية الجزائرية الديمقراطية الشعبية — وزارة التربية الوطنية</span>
+        <span class="hidden md:inline text-emerald-300/60 mr-2">| دليل ومنصة التعليم المتوسط (الجيل الثاني) 2025/2026</span>
+      </div>
+      <div class="flex items-center gap-4 text-xs">
+        <span class="flex items-center gap-1.5 text-emerald-300 font-bold">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 dot-pulse"></span>
+          السنة الدراسية جارية • محيّنة رسمياً
+        </span>
+        <button onclick="toast('تم تحديث التوزيع السنوي للتعلمات لشهر أكتوبر 2025', 'info')" class="hover:text-gold-400 font-bold">
+          <i class="fa-solid fa-bell text-gold-400 ml-1"></i> التعميمات الوزارية
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= NAVBAR ================= -->
+  <header id="mainNav" class="sticky top-0 z-50 bg-white/95 backdrop-blur-xl border-b border-slate-200/80 shadow-sm no-print">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
+      
+      <!-- Logo -->
+      <div class="flex items-center gap-3 cursor-pointer group" onclick="switchView('home')">
+        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-dzgreen-500 to-[#021a13] flex items-center justify-center text-white shadow-soft group-hover:scale-105 transition">
+          <i class="fa-solid fa-graduation-cap text-2xl text-gold-400"></i>
+        </div>
+        <div>
+          <div class="font-black text-xl tracking-tight text-slate-900 leading-none">
+            مَنارَة <span class="text-dzgreen-500">المُتوسّط</span>
+          </div>
+          <div class="text-[11px] text-slate-500 font-bold mt-1">بوابة الأستاذ والإدارة التربوية الجزائريّة</div>
+        </div>
+      </div>
+
+      <!-- Center Links -->
+      <nav class="hidden lg:flex items-center gap-1 font-bold text-sm text-slate-700">
+        <button onclick="switchView('home'); scrollToSection('hero')" class="px-3.5 py-2 rounded-xl hover:bg-emerald-50 hover:text-dzgreen-600 transition">الرئيسية</button>
+        <button onclick="switchView('home'); scrollToSection('teacherGuideSec')" class="px-3.5 py-2 rounded-xl hover:bg-emerald-50 hover:text-dzgreen-600 transition flex items-center gap-1">
+          <span>دليل الأستاذ البيداغوجي</span>
+          <span class="w-2 h-2 rounded-full bg-gold-500"></span>
+        </button>
+        <button onclick="switchView('home'); scrollToSection('inspectorSec')" class="px-3.5 py-2 rounded-xl hover:bg-emerald-50 hover:text-dzgreen-600 transition">حقيبة المفتش</button>
+        <button onclick="switchView('home'); scrollToSection('subjectsSec')" class="px-3.5 py-2 rounded-xl hover:bg-emerald-50 hover:text-dzgreen-600 transition">المواد والمستويات</button>
+        <button onclick="switchView('home'); scrollToSection('adminSec')" class="px-3.5 py-2 rounded-xl hover:bg-emerald-50 hover:text-dzgreen-600 transition">بوابة الإدارة</button>
+      </nav>
+
+      <!-- Auth Actions -->
+      <div class="flex items-center gap-2.5">
+        <div id="authNavGuest" class="flex items-center gap-2">
+          <button onclick="openAuth('login')" class="px-4 py-2.5 rounded-xl border border-slate-300 font-bold text-slate-700 hover:bg-slate-100 transition text-sm flex items-center gap-2">
+            <i class="fa-solid fa-arrow-right-to-bracket text-dzgreen-600"></i>
+            <span>دخول</span>
+          </button>
+          <button onclick="openAuth('register')" class="btn-shine px-5 py-2.5 rounded-xl bg-dzgreen-600 hover:bg-dzgreen-700 text-white font-extrabold text-sm shadow-soft transition flex items-center gap-2">
+            <i class="fa-solid fa-user-plus"></i>
+            <span>حساب جديد</span>
+          </button>
+        </div>
+
+        <div id="authNavUser" class="hidden items-center gap-2">
+          <button onclick="goToMyDashboard()" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-dzgreen-50 border border-dzgreen-500/30 text-dzgreen-700 font-bold text-sm">
+            <i class="fa-solid fa-gauge-high"></i>
+            <span id="navUserName">فضائي</span>
+          </button>
+          <button onclick="handleLogout()" class="w-10 h-10 rounded-xl bg-red-50 text-red-600 hover:bg-red-100 flex items-center justify-center transition" title="خروج">
+            <i class="fa-solid fa-power-off"></i>
+          </button>
+        </div>
+
+        <!-- Mobile hamburger -->
+        <button onclick="toggleMobileMenu()" class="lg:hidden w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-700">
+          <i class="fa-solid fa-bars text-lg"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-slate-200 bg-white px-4 py-3 space-y-1 text-sm font-bold">
+      <button onclick="switchView('home'); scrollToSection('hero'); toggleMobileMenu()" class="w-full text-right py-2 px-3 rounded-lg hover:bg-slate-100">الرئيسية</button>
+      <button onclick="switchView('home'); scrollToSection('teacherGuideSec'); toggleMobileMenu()" class="w-full text-right py-2 px-3 rounded-lg hover:bg-slate-100">دليل الأستاذ والمقاطع</button>
+      <button onclick="switchView('home'); scrollToSection('inspectorSec'); toggleMobileMenu()" class="w-full text-right py-2 px-3 rounded-lg hover:bg-slate-100">حقيبة المفتش الرسمية</button>
+      <button onclick="switchView('home'); scrollToSection('subjectsSec'); toggleMobileMenu()" class="w-full text-right py-2 px-3 rounded-lg hover:bg-slate-100">المواد والأطوار (1م - 4م)</button>
+      <button onclick="switchView('home'); scrollToSection('adminSec'); toggleMobileMenu()" class="w-full text-right py-2 px-3 rounded-lg hover:bg-slate-100">بوابة الإدارة المدرسية</button>
+    </div>
+  </header>
+
+  <!-- ================= NOTIFICATIONS TOAST CONTAINER ================= -->
+  <div id="toastContainer" class="fixed bottom-6 left-6 z-[200] space-y-2 pointer-events-none"></div>
+
+  <!-- ================= VIEW 1: HOME PAGE ================= -->
+  <main id="view-home" class="min-h-screen">
+    
+    <!-- Hero Section -->
+    <section id="hero" class="hero-bg pattern-grid text-white relative overflow-hidden pt-12 pb-24 lg:pt-16 lg:pb-32">
+      <div class="max-w-7xl mx-auto px-4 relative z-10 grid lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2.5 glass px-4 py-1.5 rounded-full text-xs font-bold text-emerald-200">
+            <span class="bg-gold-500 text-[#021a13] px-2.5 py-0.5 rounded-full font-black text-[11px]">محيّن 2025/2026</span>
+            <span>مطابق حرفياً لمنهاج وزارة التربية الوطنية الجزائريّة — الجيل الثاني</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.18] tracking-tight">
+            المنصة الشاملة لأستاذ وإدارة 
+            <span class="text-transparent bg-clip-text bg-gradient-to-l from-gold-400 via-yellow-200 to-white">الطور المتوسط الجزائري</span>
+          </h1>
+
+          <p class="text-emerald-100/90 text-base sm:text-lg leading-relaxed font-medium max-w-2xl">
+            سجّل مباشرة بالبريد الإلكتروني أو <strong class="text-white underline decoration-gold-400">بحساب فيسبوك</strong> في ثوانٍ. اختر مادتك وطورك لتوليد وتحميل المذكرات الجاهزة، الكفاءات الختامية، المقاطع التعلمية، والمخططات السنوية بملفات حقيقية <span class="text-gold-300 font-bold">(Word و PDF حقيقي قابلة للتعديل والطباعة)</span> مع ملف التفتيش المتكامل.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <button onclick="openAuth('register', 'teacher')" class="btn-shine bg-gradient-to-l from-gold-400 to-gold-500 hover:from-gold-500 hover:to-gold-600 text-[#021a13] font-black px-6 py-4 rounded-2xl shadow-elevation hover:scale-[1.02] transition flex items-center gap-3">
+              <i class="fa-solid fa-chalkboard-user text-xl"></i>
+              <span>إنشاء حساب أستاذ(ة) مجاني</span>
+            </button>
+            <button onclick="openAuth('register', 'admin')" class="glass hover:bg-white/20 text-white font-extrabold px-6 py-4 rounded-2xl transition flex items-center gap-3 border border-white/25">
+              <i class="fa-solid fa-school text-xl text-gold-400"></i>
+              <span>فضاء الإدارة والمتوسطة</span>
+            </button>
+            <button onclick="quickGuestAccess('teacher')" class="px-5 py-4 rounded-2xl bg-emerald-950/70 border border-emerald-400/40 text-emerald-200 hover:text-white font-bold text-sm transition flex items-center gap-2">
+              <i class="fa-solid fa-bolt text-gold-400"></i>
+              <span>معاينة فورية بدون تسجيل</span>
+            </button>
+          </div>
+
+          <!-- Social Proof Fast bar -->
+          <div class="pt-4 flex flex-wrap items-center gap-4 text-xs text-emerald-200/80 font-bold">
+            <div class="flex items-center gap-2 bg-white/10 px-3.5 py-2 rounded-xl backdrop-blur-sm border border-white/10">
+              <i class="fa-brands fa-facebook text-blue-400 text-lg"></i>
+              <span>تسجيل دخول فوري بفيسبوك</span>
+            </div>
+            <div class="flex items-center gap-2 bg-white/10 px-3.5 py-2 rounded-xl backdrop-blur-sm border border-white/10">
+              <i class="fa-solid fa-file-word text-blue-300 text-lg"></i>
+              <span>تحميل فعلي لمذكرات Word ممتلئة</span>
+            </div>
+            <div class="flex items-center gap-2 bg-white/10 px-3.5 py-2 rounded-xl backdrop-blur-sm border border-white/10">
+              <i class="fa-solid fa-user-check text-green-400 text-lg"></i>
+              <span>جاهز لزيارة المفتش 100%</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Hero Interactive Preview Card -->
+        <div class="lg:col-span-5 relative">
+          <div class="glass-card rounded-3xl p-6 shadow-2xl text-slate-800 relative z-10 border border-emerald-100">
+            
+            <div class="flex items-center justify-between border-b pb-4 mb-4">
+              <div class="flex items-center gap-2.5">
+                <span class="w-3.5 h-3.5 rounded-full bg-red-500"></span>
+                <span class="w-3.5 h-3.5 rounded-full bg-amber-500"></span>
+                <span class="w-3.5 h-3.5 rounded-full bg-emerald-500"></span>
+                <span class="text-xs font-black text-slate-500 mr-2">بطاقة مقطع تعلمي تفاعلية</span>
+              </div>
+              <span class="stamp-badge text-[11px]">موافق للمنهاج</span>
+            </div>
+
+            <!-- Card Content Mockup -->
+            <div class="space-y-4 text-right">
+              <div>
+                <div class="text-xs font-bold text-dzgreen-600 mb-1">المادة والطور:</div>
+                <div class="text-base font-black text-slate-900 flex items-center justify-between">
+                  <span>الرياضيات — السنة الرابعة متوسط (4م)</span>
+                  <span class="badge-chip bg-emerald-100 text-dzgreen-800 text-[11px]">BEM 2026</span>
+                </div>
+              </div>
+
+              <div class="p-3.5 bg-slate-50 rounded-2xl border border-slate-100">
+                <div class="text-xs font-black text-slate-500 mb-1">المقطع التعلمي رقم 01:</div>
+                <div class="text-sm font-black text-slate-800">الأعداد الطبيعية والأعداد الناطقة — الحساب على الجذور</div>
+                <div class="mt-2 text-xs text-slate-600 font-medium">
+                  <strong>الكفاءة المستهدفة:</strong> يحل مشكلات بتوظيف خواص قواسم عدد طبيعي، تعيين PGCD، واختزال الكسور للوصول لكسر غير قابل للاختزال.
+                </div>
+              </div>
+
+              <div class="space-y-2">
+                <div class="flex justify-between text-xs font-bold text-slate-600">
+                  <span>الموارد المعرفية المنجزة (3 من 4)</span>
+                  <span class="text-dzgreen-600">75%</span>
+                </div>
+                <div class="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
+                  <div class="h-full bg-gradient-to-l from-dzgreen-500 to-gold-400 w-3/4 rounded-full"></div>
+                </div>
+              </div>
+
+              <!-- Instant Test Real Download Button -->
+              <div class="pt-2">
+                <button onclick="downloadSampleDoc('math', '4M')" class="w-full bg-dzgreen-600 hover:bg-dzgreen-700 text-white font-black py-3 px-4 rounded-xl text-xs transition flex items-center justify-center gap-2 shadow-md">
+                  <i class="fa-solid fa-file-arrow-down text-base text-gold-300"></i>
+                  <span>تحميل نموذج المذكرة الحقيقية (.doc Word) الآن</span>
+                </button>
+                <div class="text-[10px] text-center text-slate-400 mt-1 font-bold">ملف حقيقي ممتلئ بكامل الحقول جاهز للطباعة والتعديل</div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Decorative Badges -->
+          <div class="absolute -top-5 -right-5 glass px-4 py-2.5 rounded-2xl hidden md:flex items-center gap-3 text-xs font-black text-white shadow-lg">
+            <span class="w-8 h-8 rounded-xl bg-gold-500 text-slate-900 flex items-center justify-center"><i class="fa-solid fa-stamp"></i></span>
+            <span>وثائق المفتش محيّنة 100%</span>
+          </div>
+          <div class="absolute -bottom-6 -left-5 bg-white text-slate-800 p-3.5 rounded-2xl hidden md:flex items-center gap-3 shadow-elevation border border-slate-100 text-xs font-black">
+            <span class="w-8 h-8 rounded-xl bg-blue-600 text-white flex items-center justify-center"><i class="fa-brands fa-facebook-f"></i></span>
+            <span>دخول فوري بضغطة زر واحدة</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Live Algerian Wilayas Marquee -->
+      <div class="mt-14 border-t border-white/10 bg-black/25 py-3 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 flex items-center">
+          <span class="text-xs font-black text-gold-400 shrink-0 ml-4 hidden sm:inline">
+            <i class="fa-solid fa-location-dot ml-1"></i> تغطية 58 ولاية:
+          </span>
+          <div class="overflow-hidden flex-1">
+            <div id="wilayasMarquee" class="marquee text-xs font-bold text-emerald-100">
+              <!-- Dynamically Populated -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Stat Cards -->
+    <section class="max-w-7xl mx-auto px-4 -mt-10 relative z-20">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        
+        <div class="glass-card rounded-2xl p-5 shadow-card border-t-4 border-dzgreen-600 flex items-center gap-4">
+          <div class="w-13 h-13 w-12 h-12 rounded-xl bg-emerald-100 text-dzgreen-700 flex items-center justify-center text-xl shrink-0">
+            <i class="fa-solid fa-book-journal-whills"></i>
+          </div>
+          <div>
+            <div class="text-2xl font-black text-slate-800">12 مادة</div>
+            <div class="text-xs text-slate-500 font-bold">وفق منهاج الجيل 2</div>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-2xl p-5 shadow-card border-t-4 border-gold-500 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-amber-100 text-gold-600 flex items-center justify-center text-xl shrink-0">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <div>
+            <div class="text-2xl font-black text-slate-800">4 مستويات</div>
+            <div class="text-xs text-slate-500 font-bold">1م • 2م • 3م • 4م</div>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-2xl p-5 shadow-card border-t-4 border-blue-500 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-xl shrink-0">
+            <i class="fa-solid fa-folder-closed"></i>
+          </div>
+          <div>
+            <div class="text-2xl font-black text-slate-800">15 وثيقة</div>
+            <div class="text-xs text-slate-500 font-bold">ملف تفتيش رسمي كامل</div>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-2xl p-5 shadow-card border-t-4 border-purple-500 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center text-xl shrink-0">
+            <i class="fa-solid fa-cloud-arrow-down"></i>
+          </div>
+          <div>
+            <div class="text-2xl font-black text-slate-800">تنزيل حقيقي</div>
+            <div class="text-xs text-slate-500 font-bold">ملفات Word/PDF فورية</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= SECTION: INTERACTIVE TEACHER GUIDE (دليل الأستاذ) ================= -->
+    <section id="teacherGuideSec" class="max-w-7xl mx-auto px-4 py-20">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="badge-chip bg-emerald-100 text-dzgreen-800 font-bold mb-3">
+          <i class="fa-solid fa-compass ml-1"></i> دليل الأستاذ التفاعلي الشامل
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 leading-snug">
+          كل ما يحتاجه أستاذ المتوسط: <span class="text-dzgreen-600">المقاطع، الموارد المعرفية، والكفاءات</span>
+        </h2>
+        <p class="text-slate-600 font-medium mt-3 text-sm sm:text-base">
+          اختر مادتك والمستوى الدراسي وسيعرض لك الدليل فوراً المخطط الوزاري الرسمي، الكفاءة الختامية، بطاقات المقاطع، المذكرات النموذجية، وإمكانية تنزيل الوثائق حقيقة على جهازك.
+        </p>
+      </div>
+
+      <!-- Controls: Subject & Level Selector -->
+      <div class="glass-card rounded-3xl p-6 shadow-card border border-emerald-900/10 mb-8">
+        <div class="grid md:grid-cols-12 gap-4 items-center">
+          
+          <div class="md:col-span-5">
+            <label class="block text-xs font-black text-slate-600 mb-1">المادة الدراسية:</label>
+            <div class="relative">
+              <select id="guideSubjectSelect" onchange="renderTeacherGuide()" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 font-extrabold text-slate-800 text-sm focus:bg-white transition cursor-pointer appearance-none pr-10">
+                <!-- Injected via JS -->
+              </select>
+              <i class="fa-solid fa-book absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"></i>
+            </div>
+          </div>
+
+          <div class="md:col-span-4">
+            <label class="block text-xs font-black text-slate-600 mb-1">الطور / المستوى:</label>
+            <div class="grid grid-cols-4 gap-1.5 bg-slate-100 p-1 rounded-xl">
+              <button onclick="changeGuideLevel('1M')" data-lvl="1M" class="guide-lvl-btn py-2 text-xs font-black rounded-lg transition text-slate-600 hover:text-dzgreen-600">1 متوسط</button>
+              <button onclick="changeGuideLevel('2M')" data-lvl="2M" class="guide-lvl-btn py-2 text-xs font-black rounded-lg transition text-slate-600 hover:text-dzgreen-600">2 متوسط</button>
+              <button onclick="changeGuideLevel('3M')" data-lvl="3M" class="guide-lvl-btn py-2 text-xs font-black rounded-lg transition text-slate-600 hover:text-dzgreen-600">3 متوسط</button>
+              <button onclick="changeGuideLevel('4M')" data-lvl="4M" class="guide-lvl-btn active bg-dzgreen-600 text-white py-2 text-xs font-black rounded-lg transition shadow-sm">4 متوسط</button>
+            </div>
+          </div>
+
+          <div class="md:col-span-3 flex md:justify-end gap-2 pt-4 md:pt-0">
+            <button onclick="downloadAnnualDistribution()" class="w-full md:w-auto bg-gradient-to-l from-dzgreen-600 to-dzgreen-700 hover:from-dzgreen-700 hover:to-dzgreen-800 text-white font-extrabold px-4 py-3 rounded-xl text-xs flex items-center justify-center gap-2 shadow transition">
+              <i class="fa-solid fa-file-word text-gold-300"></i>
+              <span>تحميل التوزيع السنوي Word</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Guide Content Dynamic Container -->
+      <div id="guideDisplayContainer" class="space-y-6">
+        <!-- Rendered dynamically -->
+      </div>
+
+    </section>
+
+    <!-- ================= SECTION: INSPECTOR DOSSIER (حقيبة المفتش) ================= -->
+    <section id="inspectorSec" class="bg-[#032319] text-white py-20 pattern-grid relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 relative z-10">
+        
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+          
+          <div class="lg:col-span-6 space-y-6">
+            <div class="inline-flex items-center gap-2 bg-gold-500/20 text-gold-300 border border-gold-500/30 px-3.5 py-1 rounded-full text-xs font-black">
+              <i class="fa-solid fa-certificate"></i>
+              <span>حقيبة التفتيش والترسيم والمتابعة البيداغوجية</span>
+            </div>
+
+            <h2 class="text-3xl sm:text-4xl font-black leading-snug">
+              كل ما يطلبه منك مفتش المادة في الجزائر — <span class="text-gold-400">جاهز ومكتمل</span>
+            </h2>
+
+            <p class="text-emerald-100/90 text-sm sm:text-base leading-relaxed font-medium">
+              لا ترتبك بعد اليوم أمام زيارات التفتيش أو لجان التثبيت. لقد قمنا بتنظيم كافة الدفاتر الرسمية الخمسة، الوثائق الستة، شبكات تقويم الأداء البيداغوجي، والأسئلة الشائعة التي يطرحها المفتش مع إجاباتها النموذجية.
+            </p>
+
+            <div class="grid sm:grid-cols-2 gap-3 pt-2">
+              <div class="bg-white/10 p-3.5 rounded-2xl border border-white/15">
+                <div class="text-gold-400 font-black text-sm mb-1"><i class="fa-solid fa-book-bookmark ml-1"></i> الدفاتر الإجبارية (05)</div>
+                <div class="text-xs text-emerald-100/80 leading-normal">دفتر التحضير، النصوص، التنقيط، التكوين، وتحليل النتائج.</div>
+              </div>
+              <div class="bg-white/10 p-3.5 rounded-2xl border border-white/15">
+                <div class="text-gold-400 font-black text-sm mb-1"><i class="fa-solid fa-folder-tree ml-1"></i> الوثائق البيداغوجية (06)</div>
+                <div class="text-xs text-emerald-100/80 leading-normal">المنهاج، الوثيقة المرافقة، المخطط السنوي، التوزيع الشهري، والكراريس.</div>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-3 pt-2">
+              <button onclick="downloadInspectorPack()" class="btn-shine bg-gold-500 hover:bg-gold-600 text-slate-900 font-black px-6 py-3.5 rounded-2xl text-xs sm:text-sm flex items-center gap-2 shadow-elevation transition">
+                <i class="fa-solid fa-download"></i>
+                <span>تحميل حزمة المفتش كاملة (ملف تنفيذي حقيقي)</span>
+              </button>
+              <button onclick="printInspectorChecklist()" class="bg-white/15 hover:bg-white/25 text-white font-bold px-5 py-3.5 rounded-2xl text-xs sm:text-sm flex items-center gap-2 border border-white/20 transition">
+                <i class="fa-solid fa-print"></i>
+                <span>طباعة شبكة المراقبة</span>
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Interactive Checklist Card -->
+          <div class="lg:col-span-6">
+            <div class="bg-white text-slate-800 rounded-3xl p-6 sm:p-8 shadow-elevation border border-emerald-900/20">
+              
+              <div class="flex items-center justify-between border-b pb-4 mb-5">
+                <div>
+                  <div class="text-xs text-dzgreen-600 font-black">أداة المتابعة الذاتية</div>
+                  <div class="text-lg font-black text-slate-900">قائمة التحقق لزيارة المفتش</div>
+                </div>
+                <div class="text-left">
+                  <div class="text-2xl font-black text-dzgreen-600" id="checklistPercent">0%</div>
+                  <div class="text-[11px] font-bold text-slate-400">نسبة الجاهزية</div>
+                </div>
+              </div>
+
+              <!-- Interactive List Items -->
+              <div class="space-y-3" id="inspectorChecklistItems">
+                <!-- Checkboxes populated via JS -->
+              </div>
+
+              <div class="mt-6 pt-4 border-t flex items-center justify-between">
+                <span class="text-xs font-bold text-slate-500">يتم حفظ تقدمك تلقائياً على المتصفح</span>
+                <button onclick="resetInspectorChecklist()" class="text-xs text-red-600 font-bold hover:underline">إعادة ضبط</button>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= SECTION: ALL SUBJECTS GRID ================= -->
+    <section id="subjectsSec" class="max-w-7xl mx-auto px-4 py-20">
+      <div class="flex flex-wrap items-end justify-between gap-4 mb-10">
+        <div>
+          <span class="badge-chip bg-emerald-100 text-dzgreen-800 font-bold mb-2">المنهاج الجزائري الكامل</span>
+          <h2 class="text-3xl font-black text-slate-900">مواد الطور المتوسط (الجيل الثاني)</h2>
+          <p class="text-slate-600 text-sm font-medium">12 مادة بمقرراتها ومذكراتها الرسمية المحيّنة</p>
+        </div>
+        <div class="text-xs font-bold text-slate-500">اضغط على أي مادة لاستعراض مذكراتها وتوليد ملفاتها</div>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4" id="subjectsCardGrid">
+        <!-- Injected via JS -->
+      </div>
+    </section>
+
+    <!-- ================= SECTION: ADMIN PORTAL PREVIEW ================= -->
+    <section id="adminSec" class="bg-slate-100 py-20 border-t border-slate-200">
+      <div class="max-w-7xl mx-auto px-4">
+        
+        <div class="bg-gradient-to-br from-[#0B6B4A] to-[#021a13] rounded-3xl p-8 sm:p-12 text-white shadow-elevation relative overflow-hidden">
+          <div class="pattern-grid absolute inset-0 opacity-20"></div>
+
+          <div class="relative z-10 grid lg:grid-cols-12 gap-10 items-center">
+            <div class="lg:col-span-7 space-y-5">
+              <span class="bg-white/15 px-3.5 py-1 rounded-full text-xs font-black text-gold-300 border border-white/20">
+                بوابة الإدارة التربوية: المدير • الناظر • مستشار التربية
+              </span>
+              <h2 class="text-3xl sm:text-4xl font-black leading-snug">
+                تسيير رقمي متكامل لمؤسستك التربوية
+              </h2>
+              <p class="text-emerald-100/90 text-sm sm:text-base leading-relaxed font-medium">
+                تمكين الطاقم الإداري من المصادقة الفورية على حسابات الأساتذة المسجلين عبر الإيميل أو فيسبوك، ضبط توزيع الأقسام، متابعة الغيابات، إرسال الاستدعاءات، واستخراج التقرير الشهري الوزاري بضغطة زر واحدة.
+              </p>
+              
+              <div class="flex flex-wrap gap-3 pt-2">
+                <button onclick="openAuth('register', 'admin')" class="btn-shine bg-white hover:bg-slate-100 text-dzgreen-800 font-black px-6 py-3.5 rounded-2xl text-sm transition">
+                  <i class="fa-solid fa-building-columns ml-2 text-gold-600"></i>
+                  <span>إنشاء حساب إدارة متوسطة</span>
+                </button>
+                <button onclick="quickGuestAccess('admin')" class="bg-emerald-900/60 hover:bg-emerald-900 text-white font-bold px-5 py-3.5 rounded-2xl text-sm border border-emerald-400/30 transition">
+                  <i class="fa-solid fa-laptop-file ml-2 text-gold-400"></i>
+                  <span>دخول تجريبي كمدير مؤسسة</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="lg:col-span-5 bg-white text-slate-800 p-6 rounded-2xl shadow-xl border border-white/20">
+              <div class="flex justify-between items-center border-b pb-3 mb-4">
+                <span class="font-black text-sm text-slate-900">لوحة المراقبة الإدارية السريعة</span>
+                <span class="badge-chip bg-emerald-100 text-dzgreen-700 text-[11px]">موسم 2025/2026</span>
+              </div>
+
+              <div class="space-y-3">
+                <div class="flex justify-between items-center p-2.5 bg-slate-50 rounded-xl text-xs font-bold">
+                  <span class="text-slate-600">هيئة التدريس المسجلة</span>
+                  <span class="text-dzgreen-700 font-black">44 أستاذ(ة)</span>
+                </div>
+                <div class="flex justify-between items-center p-2.5 bg-slate-50 rounded-xl text-xs font-bold">
+                  <span class="text-slate-600">طلبات التفعيل المعلقة</span>
+                  <span class="badge-chip bg-amber-100 text-amber-800 text-[10px]">3 بانتظار التأشير</span>
+                </div>
+                <div class="flex justify-between items-center p-2.5 bg-slate-50 rounded-xl text-xs font-bold">
+                  <span class="text-slate-600">أقسام المؤسسة التربوية</span>
+                  <span class="text-slate-800 font-black">18 فوج تربوي (1م إلى 4م)</span>
+                </div>
+                <div class="flex justify-between items-center p-2.5 bg-slate-50 rounded-xl text-xs font-bold">
+                  <span class="text-slate-600">نسبة الانضباط والحضور</span>
+                  <span class="text-emerald-600 font-black">98.4%</span>
+                </div>
+              </div>
+
+              <div class="mt-4 pt-3 border-t">
+                <button onclick="downloadAdminReportSample()" class="w-full bg-slate-900 hover:bg-black text-white text-xs font-black py-2.5 rounded-xl transition flex items-center justify-center gap-2">
+                  <i class="fa-solid fa-file-pdf text-red-400"></i>
+                  <span>تصدير نموذج التقرير الوزاري الشهري</span>
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-[#021a13] text-white pt-16 pb-8 border-t border-emerald-950 no-print">
+      <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+        
+        <div class="space-y-3 md:col-span-2">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gold-500 text-slate-900 flex items-center justify-center font-black text-lg">م</div>
+            <span class="text-xl font-black">منارة المتوسط الجزائريّة</span>
+          </div>
+          <p class="text-emerald-100/70 text-xs sm:text-sm font-medium leading-relaxed max-w-md">
+            بوابة رقمية مخصصة للأستاذ والإدارة المدرسية في الجزائر. مصممة وفق أحدث معايير المفتشية العامة للتربية الوطنية ومنهاج الجيل الثاني. تدعم التوليد الفعلي لجميع الملفات والوثائق البيداغوجية.
+          </p>
+        </div>
+
+        <div>
+          <div class="font-black text-sm text-gold-400 mb-3">روابط بيداغوجية سريعة</div>
+          <ul class="space-y-2 text-xs font-bold text-emerald-100/80">
+            <li><button onclick="switchView('home'); scrollToSection('teacherGuideSec')" class="hover:text-white">المقاطع والموارد المعرفية</button></li>
+            <li><button onclick="switchView('home'); scrollToSection('inspectorSec')" class="hover:text-white">ملف زيارة المفتش</button></li>
+            <li><button onclick="downloadSampleDoc('math','4M')" class="hover:text-white">تحميل مذكرة نموذجية Word</button></li>
+            <li><button onclick="downloadInspectorPack()" class="hover:text-white">تحميل حزمة التفتيش</button></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="font-black text-sm text-gold-400 mb-3">الدعم والمصادقة</div>
+          <div class="text-xs font-bold text-emerald-100/80 space-y-2">
+            <div><i class="fa-solid fa-envelope text-gold-400 ml-1"></i> support@manara-dz.edu</div>
+            <div><i class="fa-solid fa-phone text-gold-400 ml-1"></i> الخط التربوي المجاني للأساتذة</div>
+            <div class="pt-2 text-emerald-300/60 text-[11px]">مفتوحة لكافة الأساتذة المتربصين والمرسمين عبر كامل ربوع الوطن</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 pt-6 flex flex-wrap items-center justify-between text-xs text-emerald-300/60 font-bold gap-3">
+        <div>جميع الحقوق محفوظة © 2026 — منارة المتوسط | لخدمة المدرسة الجزائرية</div>
+        <div class="flex items-center gap-3">
+          <span>الجمهورية الجزائرية الديمقراطية الشعبية</span>
+          <span>•</span>
+          <span>منهاج الجيل الثاني</span>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+
+  <!-- ================= VIEW 2: TEACHER DASHBOARD (فضاء الأستاذ) ================= -->
+  <div id="view-teacher" class="hidden min-h-screen bg-[#F1F5F3]">
+    <div class="flex">
+      
+      <!-- Teacher Sidebar -->
+      <aside class="w-64 shrink-0 bg-[#032319] text-white min-h-screen sticky top-0 h-screen flex flex-col no-print max-lg:hidden border-l border-emerald-900/50">
+        <div class="p-5 border-b border-white/10 flex items-center gap-3">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center text-slate-900 font-black text-xl shadow" id="tSidebarAvatar">
+            أ
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="font-black text-sm truncate" id="tSidebarName">أستاذ المادة</div>
+            <div class="text-[11px] text-emerald-300 font-bold truncate" id="tSidebarSubLvl">رياضيات • 4 متوسط</div>
+          </div>
+        </div>
+
+        <nav class="flex-1 p-3 space-y-1.5 overflow-y-auto text-xs font-bold">
+          <button onclick="switchTeacherTab('t-guide')" data-ttab="t-guide" class="side-link active w-full flex items-center gap-3 px-3.5 py-3 rounded-xl transition text-right">
+            <i class="fa-solid fa-compass-drafting text-sm"></i>
+            <span>دليل المقاطع والموارد</span>
+          </button>
+          <button onclick="switchTeacherTab('t-docs')" data-ttab="t-docs" class="side-link w-full flex items-center gap-3 px-3.5 py-3 rounded-xl transition text-right">
+            <i class="fa-solid fa-file-pen text-sm"></i>
+            <span>محرر المذكرات الفوري</span>
+          </button>
+          <button onclick="switchTeacherTab('t-inspector')" data-ttab="t-inspector" class="side-link w-full flex items-center gap-3 px-3.5 py-3 rounded-xl transition text-right">
+            <i class="fa-solid fa-clipboard-check text-sm"></i>
+            <span>ملفي لدى المفتش</span>
+          </button>
+          <button onclick="switchTeacherTab('t-annual')" data-ttab="t-annual" class="side-link w-full flex items-center gap-3 px-3.5 py-3 rounded-xl transition text-right">
+            <i class="fa-solid fa-calendar-check text-sm"></i>
+            <span>المخطط السنوي والتوزيع</span>
+          </button>
+          <button onclick="switchTeacherTab('t-exams')" data-ttab="t-exams" class="side-link w-full flex items-center gap-3 px-3.5 py-3 rounded-xl transition text-right">
+            <i class="fa-solid fa-pen-ruler text-sm"></i>
+            <span>بنك الفروض والاختبارات</span>
+          </button>
+        </nav>
+
+        <div class="p-4 border-t border-white/10 space-y-2 text-xs font-bold">
+          <button onclick="switchView('home')" class="w-full flex items-center gap-2 px-3 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 transition">
+            <i class="fa-solid fa-house"></i>
+            <span>العودة للواجهة الرئيسية</span>
+          </button>
+          <button onclick="handleLogout()" class="w-full flex items-center gap-2 px-3 py-2.5 rounded-xl bg-red-500/20 text-red-300 hover:bg-red-500 hover:text-white transition">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <span>تسجيل الخروج</span>
+          </button>
+        </div>
+      </aside>
+
+      <!-- Teacher Main Workspace -->
+      <main class="flex-1 min-w-0">
+        
+        <!-- Header -->
+        <header class="bg-white border-b border-slate-200 px-6 py-4 flex flex-wrap items-center justify-between gap-4 sticky top-0 z-30 shadow-sm no-print">
+          <div>
+            <h1 class="text-xl font-black text-slate-900" id="tHeaderTitle">فضاء الأستاذ — دليل ومذكرات الجيل الثاني</h1>
+            <p class="text-xs text-slate-500 font-bold">موسم 2025/2026 • حساب نشط وموثق</p>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <!-- Level / Subject Switchers for fast switching -->
+            <select id="tCurrentSubject" onchange="onTeacherSubLvlChange()" class="bg-slate-100 border border-slate-200 rounded-xl px-3 py-2 text-xs font-black text-slate-800"></select>
+            <select id="tCurrentLevel" onchange="onTeacherSubLvlChange()" class="bg-slate-100 border border-slate-200 rounded-xl px-3 py-2 text-xs font-black text-slate-800">
+              <option value="1M">1 متوسط</option>
+              <option value="2M">2 متوسط</option>
+              <option value="3M">3 متوسط</option>
+              <option value="4M" selected>4 متوسط</option>
+            </select>
+            <button onclick="downloadFullTeacherDossier()" class="btn-shine bg-dzgreen-600 hover:bg-dzgreen-700 text-white text-xs font-black px-4 py-2.5 rounded-xl transition flex items-center gap-1.5 shadow">
+              <i class="fa-solid fa-file-arrow-down text-gold-300"></i>
+              <span>تنزيل الملف التدريسي الكامل</span>
+            </button>
+          </div>
+        </header>
+
+        <!-- Sub Tabs inside Teacher Panel -->
+        <div class="p-6 max-w-6xl mx-auto space-y-6">
+          
+          <!-- TAB 1: GUIDE & SEQUENCES -->
+          <div id="tab-t-guide" class="teacher-tab-content space-y-6">
+            
+            <div class="bg-gradient-to-l from-dzgreen-600 to-[#021a13] rounded-3xl p-6 text-white flex flex-wrap items-center justify-between gap-4">
+              <div>
+                <span class="badge-chip bg-gold-400 text-slate-950 font-black mb-2">المنهاج والوثيقة المرافقة</span>
+                <h2 class="text-2xl font-black" id="tGuideSubjectHeading">المادة المحددة: الرياضيات — الرابعة متوسط</h2>
+                <p class="text-xs text-emerald-100/90 mt-1 max-w-xl font-medium" id="tGuideCompetencySummary">
+                  الكفاءة الختامية: يحل مشكلات دالة بتوظيف الحساب العددي، الهندسة الإقليدية، الإحصاء، والنمذجة الرياضية.
+                </p>
+              </div>
+              <button onclick="downloadOfficialSyllabus()" class="bg-white hover:bg-slate-100 text-dzgreen-800 font-black px-4 py-3 rounded-xl text-xs flex items-center gap-2 shadow transition">
+                <i class="fa-solid fa-file-pdf text-red-600"></i>
+                <span>المنهاج الرسمي الكامل PDF</span>
+              </button>
+            </div>
+
+            <!-- Dynamic Sequences list for Teacher -->
+            <div class="space-y-4" id="tSequencesContainer">
+              <!-- Rendered via JS -->
+            </div>
+
+          </div>
+
+          <!-- TAB 2: LESSON PLANS GENERATOR (محرر المذكرات الفعلي) -->
+          <div id="tab-t-docs" class="teacher-tab-content hidden space-y-6">
+            
+            <div class="bg-white rounded-3xl p-6 shadow-card border border-slate-200">
+              <div class="flex flex-wrap items-center justify-between border-b pb-4 mb-5 gap-3">
+                <div>
+                  <h3 class="text-lg font-black text-slate-900">مولد المذكرات البيداغوجية الرسمية (الجيل الثاني)</h3>
+                  <p class="text-xs text-slate-500 font-bold">يمكنك تعديل الحقول فوراً وتحميل المذكرة كملف Word حقيقي (.doc) يفتح في مايكروسوفت وورد أو طباعتها مباشرة</p>
+                </div>
+                <div class="flex gap-2">
+                  <button onclick="generateAndDownloadCustomDoc()" class="bg-dzgreen-600 hover:bg-dzgreen-700 text-white font-black px-4 py-2.5 rounded-xl text-xs flex items-center gap-2 transition shadow">
+                    <i class="fa-solid fa-file-word text-gold-300"></i>
+                    <span>تنزيل المذكرة الحالية (.doc)</span>
+                  </button>
+                  <button onclick="printCustomDoc()" class="bg-slate-800 hover:bg-slate-900 text-white font-black px-4 py-2.5 rounded-xl text-xs flex items-center gap-2 transition">
+                    <i class="fa-solid fa-print"></i>
+                    <span>طباعة</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Form to configure lesson plan -->
+              <div class="grid md:grid-cols-3 gap-4 mb-6 text-xs font-bold">
+                <div>
+                  <label class="block text-slate-600 mb-1">اسم الأستاذ(ة):</label>
+                  <input type="text" id="lpTeacherName" value="أستاذ(ة) المادة" class="w-full bg-slate-50 border rounded-xl p-2.5">
+                </div>
+                <div>
+                  <label class="block text-slate-600 mb-1">المؤسسة / المتوسطة:</label>
+                  <input type="text" id="lpSchool" value="متوسطة ابن خلدون" class="w-full bg-slate-50 border rounded-xl p-2.5">
+                </div>
+                <div>
+                  <label class="block text-slate-600 mb-1">رقم المذكرة والتاريخ:</label>
+                  <input type="text" id="lpNumDate" value="مذكرة رقم: 04 • التاريخ: 18 أكتوبر 2025" class="w-full bg-slate-50 border rounded-xl p-2.5">
+                </div>
+                <div>
+                  <label class="block text-slate-600 mb-1">المقطع التعلمي:</label>
+                  <input type="text" id="lpSequence" value="المقطع 01: العمليات على الأعداد الطبيعية والناطقة" class="w-full bg-slate-50 border rounded-xl p-2.5">
+                </div>
+                <div>
+                  <label class="block text-slate-600 mb-1">المورد المعرفي المستهدف:</label>
+                  <input type="text" id="lpResource" value="تعيين القاسم المشترك الأكبر PGCD بطريقة الفروق المتتالية وبخوارزمية إقليدس" class="w-full bg-slate-50 border rounded-xl p-2.5">
+                </div>
+                <div>
+                  <label class="block text-slate-600 mb-1">الحجم الساعي والوسائل:</label>
+                  <input type="text" id="lpHours" value="01 ساعة • السبورة، الكتاب المدرسي، مطبوعة الوضعية" class="w-full bg-slate-50 border rounded-xl p-2.5">
+                </div>
+              </div>
+
+              <!-- Live Preview of Lesson Plan Paper -->
+              <div class="doc-paper p-6 sm:p-8 rounded-2xl border text-slate-800 text-xs font-medium space-y-4 shadow-sm" id="printableDocPaper">
+                
+                <!-- Official Header -->
+                <div class="text-center border-b pb-3 mb-4 space-y-1">
+                  <div class="font-extrabold text-[13px]">الجمهورية الجزائرية الديمقراطية الشعبية — وزارة التربية الوطنية</div>
+                  <div class="text-slate-600 text-[11px]">مديرية التربية لولاية الجزائر • الطور المتوسط — منهاج الجيل الثاني</div>
+                  <div class="text-dzgreen-700 font-black text-sm pt-1">مذكرة بيداغوجية نموذجية للتعلم الصفي</div>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 bg-slate-50 p-3 rounded-xl border border-slate-200 font-bold text-[11px]">
+                  <div><strong>المستوى:</strong> <span id="docLvlPrev">4 متوسط</span></div>
+                  <div><strong>المادة:</strong> <span id="docSubPrev">الرياضيات</span></div>
+                  <div><strong>الميدان:</strong> الأنشطة العددية</div>
+                  <div><strong>المدة:</strong> 1 ساعة</div>
+                </div>
+
+                <div>
+                  <div class="font-black text-dzgreen-800 mb-1">الكفاءة الختامية:</div>
+                  <div class="bg-emerald-50/70 p-2.5 rounded-lg border border-emerald-200/50 leading-relaxed text-slate-700" id="docKafaPrev">
+                    يحل مشكلات بتجنيد موارد الحساب على الأعداد الطبيعية والناطقة، وتعيين القواسم المشتركة واختزال الكسور في وضعيات ذات دلالة.
+                  </div>
+                </div>
+
+                <div>
+                  <div class="font-black text-dzgreen-800 mb-1">مركبات الكفاءة والقيم المعالجة:</div>
+                  <ul class="list-disc list-inside space-y-1 text-slate-700">
+                    <li>التحكم في خوارزميات الحساب (طرح متتالي / قسمات متتالية).</li>
+                    <li>تثمين الفكر المنطقي ودقة التعبير الرياضي والملاحظة الدقيقة.</li>
+                    <li>المشاركة الفعالة ضمن العمل الجماعي واحترام الرأي الآخر.</li>
+                  </ul>
+                </div>
+
+                <!-- Stages Table -->
+                <div class="overflow-x-auto pt-2">
+                  <table class="w-full text-right border-collapse border border-slate-300 text-[11px]">
+                    <thead>
+                      <tr class="bg-slate-100 font-black text-slate-800">
+                        <th class="border border-slate-300 p-2 w-28">المرحلة</th>
+                        <th class="border border-slate-300 p-2">سيرورة النشاط التعليمي التعلمي</th>
+                        <th class="border border-slate-300 p-2 w-48">التقويم ومؤشرات الكفاءة</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200">
+                      <tr>
+                        <td class="border border-slate-300 p-2 font-black text-dzgreen-700 bg-slate-50">1. وضعية الانطلاق (10 د)</td>
+                        <td class="border border-slate-300 p-2">
+                          تذكير بمفهوم قاسم عدد طبيعي. حساب قواسم العددين 36 و 48، وتحديد القواسم المشتركة بينهما ثم استنتاج أكبر قاسم مشترك.
+                        </td>
+                        <td class="border border-slate-300 p-2 text-slate-600">
+                          تشخيصي: يتذكر مفهوم القاسم، يسترجع قابلية القسمة على 2، 3، 5.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="border border-slate-300 p-2 font-black text-dzgreen-700 bg-slate-50">2. بناء التعلمات (35 د)</td>
+                        <td class="border border-slate-300 p-2 space-y-1.5">
+                          <div><strong>النشاط المقترح:</strong> أراد بائع زهور تشكيل باقات متماثلة تضم 117 وردة حمراء و 195 وردة بيضاء دون بقاء أي وردة.</div>
+                          <div>- ما هو أكبر عدد من الباقات التي يمكن تشكيلها؟ وكم وردة من كل لون في الباقة؟</div>
+                          <div>- مناقشة صعوبة البحث عن كافة القواسم للأعداد الكبيرة، واستنتاج خوارزمية إقليدس كطريقة أسرع وأدق.</div>
+                          <div>- تدوين القاعدة وحوصلة النتائج على كراس القسم.</div>
+                        </td>
+                        <td class="border border-slate-300 p-2 text-slate-600">
+                          تكويني: ينخرط في البحث، يستعمل الآلة الحاسبة بحكمة، يبرر خطوات الخوارزمية.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="border border-slate-300 p-2 font-black text-dzgreen-700 bg-slate-50">3. إعادة الاستثمار (15 د)</td>
+                        <td class="border border-slate-300 p-2">
+                          حل التمرين رقم 18 صفحة 14 من الكتاب المدرسي: حساب PGCD(496, 806) واختزال الكسر 496/806 مباشرة.
+                        </td>
+                        <td class="border border-slate-300 p-2 text-slate-600">
+                          تحصيلي فوري: يطبق الخوارزمية بمفرده، يستنتج الكسر غير القابل للاختزال.
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="flex justify-between items-center pt-3 text-[11px] text-slate-500 font-bold border-t">
+                  <div>توقيع وتأشيرة الأستاذ(ة)</div>
+                  <div>ملاحظة السيد المفتش التربوي: ............................</div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- TAB 3: INSPECTOR FILES IN DASHBOARD -->
+          <div id="tab-t-inspector" class="teacher-tab-content hidden space-y-6">
+            <div class="bg-white rounded-3xl p-6 shadow-card border border-slate-200 space-y-4">
+              <h3 class="text-lg font-black text-slate-900">ملفي الكامل لزيارة مفتش التربية الوطنية</h3>
+              <p class="text-xs text-slate-600 font-medium">وثائق مطابقة للدفاتر القانونية المعتمدة رسمياً في المفتشية العامة للبيداغوجيا</p>
+
+              <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-2">
+                
+                <div class="border rounded-2xl p-4 bg-slate-50 hover:border-dzgreen-500 transition">
+                  <div class="flex justify-between items-start mb-2">
+                    <span class="w-10 h-10 rounded-xl bg-emerald-100 text-dzgreen-700 flex items-center justify-center text-lg"><i class="fa-solid fa-book"></i></span>
+                    <span class="badge-chip bg-emerald-100 text-dzgreen-800 text-[10px]">إجباري</span>
+                  </div>
+                  <h4 class="font-black text-sm text-slate-800">دفتر النصوص النموذجي</h4>
+                  <p class="text-xs text-slate-500 mt-1 mb-3">نموذج تنظيم الصفحات والترقيم والختم مع جدول تسلسل الحصص</p>
+                  <button onclick="downloadSpecificInspectorFile('text_notebook')" class="w-full bg-white border border-slate-300 hover:border-dzgreen-600 text-dzgreen-700 font-black py-2 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
+                    <i class="fa-solid fa-file-word"></i> تنزيل الوثيقة Word
+                  </button>
+                </div>
+
+                <div class="border rounded-2xl p-4 bg-slate-50 hover:border-dzgreen-500 transition">
+                  <div class="flex justify-between items-start mb-2">
+                    <span class="w-10 h-10 rounded-xl bg-amber-100 text-gold-600 flex items-center justify-center text-lg"><i class="fa-solid fa-chart-pie"></i></span>
+                    <span class="badge-chip bg-amber-100 text-gold-800 text-[10px]">إجباري</span>
+                  </div>
+                  <h4 class="font-black text-sm text-slate-800">دفتر المعالجة البيداغوجية</h4>
+                  <p class="text-xs text-slate-500 mt-1 mb-3">شبكات تشخيص التعثرات وفوج المتعلمين وخطة الاستدراك</p>
+                  <button onclick="downloadSpecificInspectorFile('remedial_notebook')" class="w-full bg-white border border-slate-300 hover:border-dzgreen-600 text-dzgreen-700 font-black py-2 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
+                    <i class="fa-solid fa-file-word"></i> تنزيل الوثيقة Word
+                  </button>
+                </div>
+
+                <div class="border rounded-2xl p-4 bg-slate-50 hover:border-dzgreen-500 transition">
+                  <div class="flex justify-between items-start mb-2">
+                    <span class="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-lg"><i class="fa-solid fa-list-check"></i></span>
+                    <span class="badge-chip bg-blue-100 text-blue-800 text-[10px]">إجباري</span>
+                  </div>
+                  <h4 class="font-black text-sm text-slate-800">شبكة تقويم الأداء البيداغوجي</h4>
+                  <p class="text-xs text-slate-500 mt-1 mb-3">المعايير المعتمدة من المفتش خلال الحصة الصفية ومؤشرات النقطة</p>
+                  <button onclick="downloadSpecificInspectorFile('evaluation_grid')" class="w-full bg-white border border-slate-300 hover:border-dzgreen-600 text-dzgreen-700 font-black py-2 rounded-xl text-xs flex items-center justify-center gap-1.5 transition">
+                    <i class="fa-solid fa-file-word"></i> تنزيل الوثيقة Word
+                  </button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 4: ANNUAL DISTRIBUTION -->
+          <div id="tab-t-annual" class="teacher-tab-content hidden space-y-6">
+            <div class="bg-white rounded-3xl p-6 shadow-card border border-slate-200">
+              <div class="flex justify-between items-center border-b pb-4 mb-4">
+                <h3 class="text-lg font-black text-slate-900">المخطط السنوي لبناء التعلمات — محين بالأسابيع والعطل</h3>
+                <button onclick="downloadAnnualDistribution()" class="bg-dzgreen-600 text-white font-black px-4 py-2 rounded-xl text-xs flex items-center gap-2">
+                  <i class="fa-solid fa-download"></i> تنزيل المخطط كاملاً
+                </button>
+              </div>
+              <div id="annualPlanContentContainer" class="space-y-4">
+                <!-- Injected via JS -->
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 5: EXAMS BANK -->
+          <div id="tab-t-exams" class="teacher-tab-content hidden space-y-6">
+            <div class="bg-white rounded-3xl p-6 shadow-card border border-slate-200">
+              <div class="flex justify-between items-center border-b pb-4 mb-4">
+                <div>
+                  <h3 class="text-lg font-black text-slate-900">نماذج الفروض والاختبارات الفصلية الرسمية</h3>
+                  <p class="text-xs text-slate-500 font-bold">مع سلالم التنقيط وشبكات التصحيح المعتمدة</p>
+                </div>
+              </div>
+              <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" id="examsBankContainer">
+                <!-- Injected via JS -->
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </main>
+
+    </div>
+  </div>
+
+
+  <!-- ================= VIEW 3: ADMIN DASHBOARD (فضاء الإدارة) ================= -->
+  <div id="view-admin" class="hidden min-h-screen bg-[#F0F4F8]">
+    <div class="flex">
+      
+      <!-- Admin Sidebar -->
+      <aside class="w-64 shrink-0 bg-[#0F1E2E] text-white min-h-screen sticky top-0 h-screen flex flex-col no-print max-lg:hidden border-l border-slate-800">
+        <div class="p-5 border-b border-white/10 flex items-center gap-3">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-gold-500 to-amber-600 flex items-center justify-center text-slate-950 font-black text-xl shadow">
+            <i class="fa-solid fa-school"></i>
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="font-black text-sm truncate" id="aSidebarName">إدارة المتوسطة</div>
+            <div class="text-[11px] text-slate-400 font-bold truncate">المديرية العامة للمؤسسة</div>
+          </div>
+        </div>
+
+        <nav class="flex-1 p-3 space-y-1.5 overflow-y-auto text-xs font-bold">
+          <button onclick="switchAdminTab('a-overview')" data-atab="a-overview" class="side-link active w-full flex items-center gap-3 px-3.5 py-3 rounded-xl transition text-right">
+            <i class="fa-solid fa-chart-line text-sm"></i>
+            <span>لوحة المؤشرات العامة</span>
+          </button>
+          <button onclick="switchAdminTab('a-teachers')" data-atab="a-teachers" class="side-link w-full flex items-center gap-3 px-3.5 py-3 rounded-xl transition text-right">
+            <i class="fa-solid fa-chalkboard-user text-sm"></i>
+            <span>إدارة حسابات الأساتذة</span>
+            <span id="badgePendingCount" class="mr-auto bg-red-500 text-white text-[10px] px-2 py-0.5 rounded-full font-black">2</span>
+          </button>
+          <button onclick="switchAdminTab('a-reports')" data-atab="a-reports" class="side-link w-full flex items-center gap-3 px-3.5 py-3 rounded-xl transition text-right">
+            <i class="fa-solid fa-file-contract text-sm"></i>
+            <span>التقارير والمراسلات الوزارية</span>
+          </button>
+        </nav>
+
+        <div class="p-4 border-t border-white/10 space-y-2 text-xs font-bold">
+          <button onclick="switchView('home')" class="w-full flex items-center gap-2 px-3 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 transition">
+            <i class="fa-solid fa-house"></i>
+            <span>الواجهة الرئيسية</span>
+          </button>
+          <button onclick="handleLogout()" class="w-full flex items-center gap-2 px-3 py-2.5 rounded-xl bg-red-500/20 text-red-300 hover:bg-red-500 hover:text-white transition">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            <span>تسجيل الخروج</span>
+          </button>
+        </div>
+      </aside>
+
+      <!-- Admin Main Content -->
+      <main class="flex-1 min-w-0">
+        
+        <header class="bg-white border-b border-slate-200 px-6 py-4 flex flex-wrap items-center justify-between gap-4 sticky top-0 z-30 shadow-sm no-print">
+          <div>
+            <h1 class="text-xl font-black text-slate-900">بوابة إدارة المتوسطة — المتابعة الإدارية والبيداغوجية</h1>
+            <p class="text-xs text-slate-500 font-bold">متوسطة الشهيد زبانة • ولاية الجزائر</p>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <button onclick="downloadAdminReportSample()" class="btn-shine bg-dzgreen-600 hover:bg-dzgreen-700 text-white text-xs font-black px-4 py-2.5 rounded-xl transition flex items-center gap-2 shadow">
+              <i class="fa-solid fa-file-pdf text-red-300"></i>
+              <span>استخراج التقرير الشهري للمديرية</span>
+            </button>
+          </div>
+        </header>
+
+        <div class="p-6 max-w-6xl mx-auto space-y-6">
+          
+          <!-- TAB 1: ADMIN OVERVIEW -->
+          <div id="tab-a-overview" class="admin-tab-content space-y-6">
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="text-xs font-bold text-slate-500 mb-1">إجمالي الأساتذة بالمؤسسة</div>
+                <div class="text-2xl font-black text-slate-900">42 أستاذ</div>
+                <div class="text-[11px] text-emerald-600 font-bold mt-1">✓ 38 مرسمين • 4 مستخلفين</div>
+              </div>
+              <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="text-xs font-bold text-slate-500 mb-1">الحسابات النشطة بالمنصة</div>
+                <div class="text-2xl font-black text-dzgreen-600" id="adminTotalActiveTeachers">39</div>
+                <div class="text-[11px] text-slate-400 font-bold mt-1">عبر الإيميل وفيسبوك</div>
+              </div>
+              <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="text-xs font-bold text-slate-500 mb-1">نسبة الحضور لهذا الشهر</div>
+                <div class="text-2xl font-black text-slate-900">97.8%</div>
+                <div class="text-[11px] text-emerald-600 font-bold mt-1">انضباط تربوي ممتاز</div>
+              </div>
+              <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="text-xs font-bold text-slate-500 mb-1">زيارات المفتشين المبرمجة</div>
+                <div class="text-2xl font-black text-gold-600">4 زيارات</div>
+                <div class="text-[11px] text-slate-400 font-bold mt-1">خلال شهر نوفمبر 2025</div>
+              </div>
+            </div>
+
+            <!-- Chart Row -->
+            <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm">
+              <h3 class="text-sm font-black text-slate-800 mb-4">توزيع أساتذة المؤسسة حسب المواد التعليمية</h3>
+              <div class="h-64">
+                <canvas id="adminSubjectsChart"></canvas>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- TAB 2: TEACHERS APPROVAL -->
+          <div id="tab-a-teachers" class="admin-tab-content hidden space-y-6">
+            <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm">
+              <div class="flex justify-between items-center border-b pb-4 mb-4">
+                <div>
+                  <h3 class="text-lg font-black text-slate-900">قائمة الأساتذة وطلبات الانضمام</h3>
+                  <p class="text-xs text-slate-500 font-bold">المصادقة على الأساتذة المسجلين بالبريد أو حساب فيسبوك</p>
+                </div>
+              </div>
+
+              <!-- Teachers Table -->
+              <div class="overflow-x-auto">
+                <table class="w-full text-right border-collapse text-xs">
+                  <thead>
+                    <tr class="bg-slate-100 font-black text-slate-700">
+                      <th class="p-3">الأستاذ(ة)</th>
+                      <th class="p-3">المادة والطور</th>
+                      <th class="p-3">طريقة التسجيل</th>
+                      <th class="p-3">تاريخ الطلب</th>
+                      <th class="p-3">الحالة</th>
+                      <th class="p-3 text-center">الإجراء الإداري</th>
+                    </tr>
+                  </thead>
+                  <tbody id="adminTeachersTableBody" class="divide-y divide-slate-100 font-bold">
+                    <!-- Populated dynamically -->
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- TAB 3: OFFICIAL REPORTS -->
+          <div id="tab-a-reports" class="admin-tab-content hidden space-y-6">
+            <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm space-y-4">
+              <h3 class="text-lg font-black text-slate-900">التقارير الإدارية والمراسلات الوزارية</h3>
+              <p class="text-xs text-slate-500 font-bold">توليد تقارير رسمية جاهزة للتقديم لمديرية التربية</p>
+
+              <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                <div class="p-4 border rounded-2xl bg-slate-50 flex items-center justify-between">
+                  <div>
+                    <div class="font-black text-sm text-slate-800">تقرير الوضعية البيداغوجية الشهرية</div>
+                    <div class="text-xs text-slate-500 mt-0.5">نسبة تقدم المناهج، الغيابات، ودفاتر النصوص</div>
+                  </div>
+                  <button onclick="downloadAdminReportSample()" class="bg-dzgreen-600 hover:bg-dzgreen-700 text-white text-xs font-black px-4 py-2.5 rounded-xl transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-file-pdf"></i> تصدير PDF
+                  </button>
+                </div>
+
+                <div class="p-4 border rounded-2xl bg-slate-50 flex items-center justify-between">
+                  <div>
+                    <div class="font-black text-sm text-slate-800">بطاقة الحالة الإدارية لأساتذة المؤسسة</div>
+                    <div class="text-xs text-slate-500 mt-0.5">جدول الرتب، الدرجات، والمواد بملف Word</div>
+                  </div>
+                  <button onclick="downloadAdminTeachersListWord()" class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-black px-4 py-2.5 rounded-xl transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-file-word"></i> تصدير Word
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </main>
+
+    </div>
+  </div>
+
+
+  <!-- ================= AUTH MODAL (تسجيل الدخول / حساب جديد / فيسبوك) ================= -->
+  <div id="authModal" class="hidden fixed inset-0 z-[150] bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl w-full max-w-md overflow-hidden shadow-2xl border border-slate-100 relative animate-in">
+      
+      <!-- Close button -->
+      <button onclick="closeAuth()" class="absolute top-4 left-4 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center text-sm font-bold transition">
+        ✕
+      </button>
+
+      <!-- Modal Header -->
+      <div class="bg-gradient-to-l from-dzgreen-600 to-[#021a13] p-6 text-white text-right">
+        <div class="flex items-center gap-2 mb-1">
+          <span class="w-8 h-8 rounded-xl bg-gold-500 text-slate-950 flex items-center justify-center font-black text-sm">م</span>
+          <span class="font-black text-base" id="authModalTitle">إنشاء حساب جديد</span>
+        </div>
+        <p class="text-xs text-emerald-100 font-medium">بوابة الأسرة التربوية للتعليم المتوسط بالجزائر</p>
+
+        <!-- Role Toggle -->
+        <div class="grid grid-cols-2 gap-2 mt-4 bg-white/10 p-1 rounded-xl text-xs font-black">
+          <button id="authBtnRoleTeacher" onclick="setAuthRole('teacher')" class="py-2 rounded-lg bg-gold-400 text-slate-950 transition">
+            <i class="fa-solid fa-chalkboard-user ml-1"></i> أستاذ(ة)
+          </button>
+          <button id="authBtnRoleAdmin" onclick="setAuthRole('admin')" class="py-2 rounded-lg text-white hover:bg-white/10 transition">
+            <i class="fa-solid fa-school ml-1"></i> إدارة المتوسطة
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-6 space-y-4">
+        
+        <!-- Tab selector (Register vs Login) -->
+        <div class="grid grid-cols-2 gap-1 bg-slate-100 p-1 rounded-xl text-xs font-black text-center">
+          <button id="tabToggleRegister" onclick="setAuthTab('register')" class="py-2 rounded-lg bg-white text-dzgreen-700 shadow-sm transition">حساب جديد</button>
+          <button id="tabToggleLogin" onclick="setAuthTab('login')" class="py-2 rounded-lg text-slate-600 transition">تسجيل الدخول</button>
+        </div>
+
+        <!-- FAST FACEBOOK LOGIN BUTTON -->
+        <button onclick="triggerFacebookLogin()" class="w-full bg-[#1877F2] hover:bg-[#166fe5] text-white font-extrabold py-3 px-4 rounded-xl text-xs flex items-center justify-center gap-2.5 transition shadow-sm">
+          <i class="fa-brands fa-facebook text-lg"></i>
+          <span>المتابعة السريعة بحساب فيسبوك (Facebook)</span>
+        </button>
+
+        <div class="flex items-center gap-3 my-2">
+          <span class="flex-1 h-px bg-slate-200"></span>
+          <span class="text-[11px] font-bold text-slate-400">أو بالبريد الإلكتروني المهني</span>
+          <span class="flex-1 h-px bg-slate-200"></span>
+        </div>
+
+        <!-- Form fields -->
+        <form id="authForm" onsubmit="handleAuthSubmit(event)" class="space-y-3 text-xs font-bold text-slate-700">
+          
+          <div id="registerNameGroup">
+            <label class="block mb-1 text-slate-600">الاسم واللقب:</label>
+            <input type="text" id="authNameInput" placeholder="أ. عبد الرحمان بن علي" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 focus:bg-white transition text-xs">
+          </div>
+
+          <div>
+            <label class="block mb-1 text-slate-600">البريد الإلكتروني:</label>
+            <input type="email" id="authEmailInput" required placeholder="prof.algerie@gmail.com" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 focus:bg-white transition text-xs" dir="ltr">
+          </div>
+
+          <div id="registerTeacherFields">
+            <div class="grid grid-cols-2 gap-2">
+              <div>
+                <label class="block mb-1 text-slate-600">المادة:</label>
+                <select id="authSubjectSelect" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-2.5 py-2.5 text-xs font-bold"></select>
+              </div>
+              <div>
+                <label class="block mb-1 text-slate-600">الطور الأكثر تدريساً:</label>
+                <select id="authLevelSelect" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-2.5 py-2.5 text-xs font-bold">
+                  <option value="4M">4 متوسط (BEM)</option>
+                  <option value="3M">3 متوسط</option>
+                  <option value="2M">2 متوسط</option>
+                  <option value="1M">1 متوسط</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div id="registerAdminFields" class="hidden">
+            <label class="block mb-1 text-slate-600">اسم المؤسسة التعليمية:</label>
+            <input type="text" id="authSchoolInput" placeholder="متوسطة الشهيد زبانة - الجزائر" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs font-bold">
+          </div>
+
+          <div>
+            <label class="block mb-1 text-slate-600">كلمة المرور:</label>
+            <input type="password" id="authPasswordInput" required placeholder="••••••••" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2.5 focus:bg-white transition text-xs" dir="ltr">
+          </div>
+
+          <button type="submit" class="w-full bg-dzgreen-600 hover:bg-dzgreen-700 text-white font-black py-3 rounded-xl text-xs transition shadow-md mt-2 flex items-center justify-center gap-2">
+            <span id="authSubmitText">إنشاء الحساب والدخول فوراً</span>
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+        </form>
+
+        <div class="text-[11px] text-center text-slate-400 font-medium">
+          بالتسجيل فإنك توافق على ميثاق أخلاقيات المهنة للتربية الوطنية.
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ================= SIMULATED FACEBOOK MODAL ================= -->
+  <div id="facebookMockModal" class="hidden fixed inset-0 z-[160] bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl w-full max-w-sm overflow-hidden shadow-2xl border text-center animate-in">
+      <div class="bg-[#1877F2] text-white p-4 font-black text-sm flex items-center justify-center gap-2">
+        <i class="fa-brands fa-facebook text-xl"></i>
+        <span>تسجيل الدخول عبر فيسبوك</span>
+      </div>
+      <div class="p-6 space-y-4">
+        <div class="w-16 h-16 rounded-full bg-slate-100 mx-auto flex items-center justify-center text-2xl text-blue-600 border-2 border-blue-500 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80" alt="FB profile" class="w-full h-full object-cover">
+        </div>
+        <div>
+          <div class="text-sm font-black text-slate-800" id="fbProfileMockName">الأستاذ(ة) الجزائري(ة)</div>
+          <div class="text-xs text-slate-500 font-bold" id="fbProfileMockEmail">prof.dz.teacher@facebook.com</div>
+        </div>
+        <p class="text-xs text-slate-600 font-medium">
+          ترغب منصة <strong>منارة المتوسط</strong> في استخدام اسمك وصورة حسابك للوصول المباشر إلى المنهاج والمذكرات.
+        </p>
+        <div class="flex gap-2 pt-2">
+          <button onclick="closeFbMock()" class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 font-black py-2.5 rounded-xl text-xs">إلغاء</button>
+          <button onclick="confirmFbMockLogin()" class="flex-1 bg-[#1877F2] hover:bg-[#166fe5] text-white font-black py-2.5 rounded-xl text-xs">متابعة باسم الحساب</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ================= JAVASCRIPT LOGIC & REAL DOWNLOAD ENGINE ================= -->
+  <script>
+    /* =========================================================
+       1. DATA STRUCTURE: ALGERIAN CURRICULUM (الجيل الثاني)
+       ========================================================= */
+    const WILAYAS = [
+      "01 أدرار", "02 الشلف", "03 الأغواط", "04 أم البواقي", "05 باتنة", "06 بجاية", "07 بسكرة", "08 بشار",
+      "09 البليدة", "10 البويرة", "11 تمنراست", "12 تبسة", "13 تلمسان", "14 تيارت", "15 تيزي وزو", "16 الجزائر",
+      "17 الجلفة", "18 جيجل", "19 سطيف", "20 سعيدة", "21 سكيكدة", "22 سيدي بلعباس", "23 عنابة", "24 قالمة",
+      "25 قسنطينة", "26 المدية", "27 مستغانم", "28 المسيلة", "29 معسكر", "30 ورقلة", "31 وهران", "32 البيض",
+      "33 إليزي", "34 برج بوعريريج", "35 بومرداس", "36 الطارف", "37 تندوف", "38 تسمسيلت", "39 الوادي", "40 خنشلة",
+      "41 سوق أهراس", "42 تيبازة", "43 ميلة", "44 عين الدفلى", "45 النعامة", "46 عين تموشنت", "47 غرداية", "48 غليزان",
+      "49 المغير", "50 المنيعة", "51 أولاد جلال", "52 برج باجي مختار", "53 بني عباس", "54 تيميمون", "55 تقرت", "56 جانت", "57 عين صالح", "58 عين قزام"
+    ];
+
+    const SUBJECTS_DATA = [
+      {
+        id: "math",
+        name: "الرياضيات",
+        icon: "fa-calculator",
+        hoursPerWeek: "5 ساعات",
+        levels: {
+          "4M": {
+            competency: "يحل مشكلات دالة بتجنيد موارده في الحساب على الأعداد الطبيعية والناطقة، الحساب الحرفي، النسب المثلثية، الهندسة في الفضاء والدوال (تحضيراً لـ BEM).",
+            sequences: [
+              {
+                num: 1,
+                title: "الأعداد الطبيعية والأعداد الناطقة والكسور غير القابلة للاختزال",
+                resources: ["قاسم عدد طبيعي وقواعد قابلية القسمة", "القاسم المشترك الأكبر PGCD (خوارزمية إقليدس والفروق)", "العددان الأوليان فيما بينهما والكسور غير القابلة للاختزال"],
+                target: "أن يتعرف المتعلم على PGCD ويوظفه في اختزال الكسور وحل مسائل واقعية (توزيع عادل).",
+                duration: "12 ساعة",
+                assessment: "وضعية إدماجية مركبة حول تقسيم مساحات زراعية أو إعداد باقات ورد بدون باقي."
+              },
+              {
+                num: 2,
+                title: "الحساب على الجذور التربيعية",
+                resources: ["مفهوم الجذر التربيعي لعدد موجب", "العمليات على الجذور التربيعية (الجداء والقسمة)", "كتابة نسبة على شكل كسر مقامه عدد ناطق"],
+                target: "أن يبسط عبارات تتضمن جذوراً تربيعية ويكتب مقام نسبة عدداً ناطقاً بالبرهان.",
+                duration: "10 ساعات",
+                assessment: "حساب أطوال ومساحات أشكال هندسية غير منتهية بأقياس غير ناطقة."
+              },
+              {
+                num: 3,
+                title: "خاصية طالس وحساب المثلثات في المثلث القائم",
+                resources: ["خاصية طالس المباشرة والعكسية", "جيب تمام وجيب وظل زاوية حادة (Cos, Sin, Tan)", "العلاقات المثلثية وحساب الأطوال والزوايا"],
+                target: "أن يوظف التوازي والنسب المثلثية لحساب أطوال وزوايا يتعذر قياسها مباشرة بالواقع.",
+                duration: "14 ساعة",
+                assessment: "مسألة قياس ارتفاع مئذنة جامع أو عرض وادٍ بالاستعانة بجهاز المزواة والمثلثات."
+              },
+              {
+                num: 4,
+                title: "الحساب الحرفي، المعادلات والمتراجحات من الدرجة الأولى",
+                resources: ["المتطابقات الشهيرة الثلاث", "تحليل عبارة جبرية إلى جداء عاملين", "حل معادلة جداء معدوم ومتراجحة من الدرجة 1 وتمثيل حلولها بيانيا"],
+                target: "أن ينمذج وضعيات مشكلة بمعادلة أو متراجحة ويحلها متأكداً من معقولية الحل.",
+                duration: "14 ساعة",
+                assessment: "وضعية تسعيرات كراء أو مقارنة عروض اشتراك هاتفية."
+              }
+            ]
+          },
+          "3M": {
+            competency: "يحل مشكلات بتوظيف الأعداد النسبية والناطقة، القوى ذات أسس صحيحة نسبية، وحالات تقايس المثلثات والدائرة المحيطة.",
+            sequences: [
+              { num: 1, title: "العمليات على الأعداد النسبية والكسور", resources: ["جداء وقسمة عددين نسبيين", "مقارنة وجمع وطرح كسرين", "مقلوب عدد غير معدوم"], target: "التحكم في أولويات العمليات وحساب مقلوب كسر.", duration: "12 سا", assessment: "سلسلة حسابات مركبة." },
+              { num: 2, title: "القوى ذات أسس صحيحة نسبية والكتابة العلمية", resources: ["قواعد الحساب على قوى 10", "الكتابة العلمية لعدد عشري", "حصر عدد وقوة"], target: "كتابة أعداد فلكية ومجهرية بالكتابة العلمية.", duration: "10 سا", assessment: "مسألة أبعاد كواكب المنظومة الشمسية." }
+            ]
+          },
+          "2M": {
+            competency: "يحل مشكلات في الأعداد النسبية والكسور، إنشاء متوازي الأضلاع، وحساب مساحات المجسمات والموشور القائم.",
+            sequences: [
+              { num: 1, title: "العمليات على الأعداد النسبية", resources: ["جمع وطرح عددين نسبيين", "المسافة بين نقطتين على مستقيم مدرج", "المعلم في المستوي"], target: "تعيين إحداثيي نقطة وحساب مسافات نسبية.", duration: "10 سا", assessment: "تعيين مواقع المدن على خريطة الجزائر بمعلم نسبي." }
+            ]
+          },
+          "1M": {
+            competency: "يوظف الأعداد الطبيعية والعشرية والكسور والحساب الهندسي الأساسي (المستقيمات، الزوايا، التناظر المحوري).",
+            sequences: [
+              { num: 1, title: "الأعداد الطبيعية والأعداد العشرية", resources: ["الكتابة العشرية والكسرية", "القسمة الإقليدية والقسمة العشرية", "المدور والقيمة المقربة"], target: "إتقان الحساب الذهني والكتابي بدقة.", duration: "14 سا", assessment: "فاتورة كهرباء ومشتريات العائلة." }
+            ]
+          }
+        }
+      },
+      {
+        id: "arabic",
+        name: "اللغة العربية",
+        icon: "fa-book-open-reader",
+        hoursPerWeek: "5 ساعات",
+        levels: {
+          "4M": {
+            competency: "ينتج نصوصاً تفسيرية وحجاجية منسجمة مشافهة وكتابة تتضمن مواقف وقضايا فكرية ومجتمعية بلغة عربية فصيحة ومستوفية للشروط الإعرابية والبلاغية (شهادة BEM).",
+            sequences: [
+              {
+                num: 1,
+                title: "المقطع 01: قضايا اجتماعية",
+                resources: ["فهم المنطوق وإنتاجه: سهرة عائلية", "القراءة المشروحة: ولي التلميذ", "قواعد اللغة: عطف النسق والبدل وعطف البيان", "البلاغة: الطباق والمقابلة والجناس", "إنتاج المكتوب: كتابة نص حجاجي"],
+                target: "أن ينبذ الآفات الاجتماعية ويدافع عن التضامن الأسري بالحجة والبرهان مستثمراً البدل وعطف النسق.",
+                duration: "10 ساعات",
+                assessment: "تحرير مقال حجاجي حول خطورة الإدمان الإلكتروني على تماسك الأسرة الجزائرية."
+              },
+              {
+                num: 2,
+                title: "المقطع 02: الإعلام والمجتمع",
+                resources: ["فهم المنطوق: وسائل الإعلام الحديثة", "القراءة المشروحة: الصحافة المكتوبة", "قواعد: العدد والمعدود والتمييز", "البلاغة: الاستعارة التصريحية والمكنية", "إنتاج المكتوب: تحرير عمود صحفي"],
+                target: "أن يوظف التمييز وأحكام العدد بدقة لإنتاج تقرير موضوعي عن الإعلام.",
+                duration: "10 ساعات",
+                assessment: "كتابة تحقيق صحفي لمجلة المتوسطة حول دور الإذاعة المدرسية."
+              },
+              {
+                num: 3,
+                title: "المقطع 03: التضامن الإنساني",
+                resources: ["فهم المنطوق: نداء الإنسانية", "قواعد: التوكيد اللفظي والمعنوي", "البلاغة: التشبيه البليغ", "إنتاج: وضعية إدماجية دالة"],
+                target: "التعبير عن قيم التكافل الوطني أثناء الكوارث الطبيعية.",
+                duration: "8 ساعات",
+                assessment: "رسالة موجهة للمجتمع المدني لدعم حملة شتاء دافئ."
+              }
+            ]
+          },
+          "3M": {
+            competency: "ينتج خطابات تفسيرية وإخبارية موظفاً الجمل المركبة والمحسنات البديعية معتزاً بالهوية الوطنية.",
+            sequences: [
+              { num: 1, title: "الآفات الاجتماعية وتحديات العصر", resources: ["المبتدأ والخبر", "اسم الفاعل وعمله", "كتابة قصة قصيرة"], target: "إبراز خطورة التدخين بأسلوب سردي مشوق.", duration: "10 سا", assessment: "قصة عن توبة مدخن." }
+            ]
+          },
+          "2M": {
+            competency: "ينتج نصوصاً توجيهية وحوارية سليمة البناء المعجمي والنحوي.",
+            sequences: [
+              { num: 1, title: "الحياة العائلية والوطنية", resources: ["الفعل المعتل وأنواعه", "أحرف العطف", "الحوار الأسري"], target: "احترام الوالدين والتعبير عن التماسك الأسري.", duration: "10 سا", assessment: "حوار بين جيلين." }
+            ]
+          },
+          "1M": {
+            competency: "يتحكم في الخطاب الوصفي والسردي وينتج نصوصاً واضحة خالية من الأخطاء الإملائية الشائعة.",
+            sequences: [
+              { num: 1, title: "الحياة العائلية وحب الوطن", resources: ["أزمنة الفعل", "الضمائر المنفصلة والمتصلة", "رسم الهمزة"], target: "وصف الأب أو الأم بأسلوب عاطفي نقي.", duration: "10 سا", assessment: "وصف مشهد عائلي يوم العيد." }
+            ]
+          }
+        }
+      },
+      {
+        id: "scnat",
+        name: "العلوم الطبيعية والحياة",
+        icon: "fa-dna",
+        hoursPerWeek: "2 ساعتان",
+        levels: {
+          "4M": {
+            competency: "يفسر الظواهر البيولوجية المرتبطة بالتغذية عند الإنسان، التنسيق الوظيفي في العضوية (الاتصال العصبي والمناعة)، وانتقال الصفات الوراثية ويتبنى سلوكيات صحية مسؤولة.",
+            sequences: [
+              {
+                num: 1,
+                title: "التغذية عند الإنسان (الهضم والامتصاص ونقل المغذيات)",
+                resources: ["التحولات التي تطرأ على الأغذية في الأنبوب الهضمي بفعل الأنزيمات", "بنية المعي الدقيق والامتصاص المعوي", "طريقا نقل المغذيات (الدموي واللمفاوي)", "استعمال المغذيات وإنتاج الطاقة والتنفس الخلوي"],
+                target: "أن يشرح التبسيط الجزيئي للأغذية ويفسر دور الزغابة المعوية كسطح تبادل.",
+                duration: "14 ساعة",
+                assessment: "تفسير أعراض مرض حساسية الغلوتين (السيلياك) وتحديد الخلل في الزغابات المعوية."
+              },
+              {
+                num: 2,
+                title: "التنسيق الوظيفي في العضوية: الاتصال العصبي والمناعة",
+                resources: ["بنية الجهاز العصبي والأعضاء الحسية", "الحركة الإرادية واللاإرادية (المنعكس الفطري)", "الخطوط الدفاعية المناعية (اللانوعية والنوعية الخلطية والخلوية)", "الاعتلالات المناعية والتلقيح والأمصال"],
+                target: "أن يميز بين الاستجابة المناعية الخلطية والخلوية، ويثمن دور اللقاحات.",
+                duration: "16 ساعة",
+                assessment: "مقارنة حالة شخص ملقح ضد الكزاز وشخص مصاب بحاجة لمصل فوري."
+              }
+            ]
+          },
+          "3M": {
+            competency: "يفسر الظواهر الجيولوجية المرتبطة بنشاط الكرة الأرضية (الزلازل، البراكين، تكتونية الصفائح).",
+            sequences: [
+              { num: 1, title: "الدينامية الداخلية للكرة الأرضية", resources: ["آثار الزلزال ومفهوم البؤرة والمركز السطحي", "أمواج الزلازل ومقياس ريشتر", "نشاط الظهرات المحيطية وزحزحة القارات"], target: "تحديد أسباب النشاط الزلزالي في شمال الجزائر.", duration: "12 سا", assessment: "إعداد دليل وقائي من الزلازل في المؤسسة." }
+            ]
+          },
+          "2M": {
+            competency: "يشرح العلاقات القائمة بين الكائنات الحية في أوساطها وتكيفاتها الفيزيولوجية والمورفولوجية.",
+            sequences: [
+              { num: 1, title: "الوسط الحي وتوازنه", resources: ["عناصر الوسط الحي والعوامل اللاحيوية", "السلاسل والشبكات الغذائية وهرم الكتلة الحية"], target: "إدراك أهمية التوازن البيئي وحماية الغابات من الحرائق.", duration: "10 سا", assessment: "تحليل شبكة غذائية في غابة تيكجدة." }
+            ]
+          },
+          "1M": {
+            competency: "يميز بين الأغذية من حيث المصدر والتركيب ويفسر وظائف التغذية والتنفس والإطراح عند الكائنات الحية.",
+            sequences: [
+              { num: 1, title: "التغذية عند الإنسان والنبات الأخضر", resources: ["تصنيف الأغذية حسب التركيب والكواشف الكيميائية", "الراتب الغذائي وشروطه", "التركيب الضوئي ومقر الامتصاص بالنبات"], target: "تصميم وجبة متوازنة لمراهق في سن التمدرس.", duration: "12 سا", assessment: "تشخيص مرض الكواشيوركور ونقص البروتين." }
+            ]
+          }
+        }
+      },
+      {
+        id: "phys",
+        name: "الفيزياء والتكنولوجيا",
+        icon: "fa-atom",
+        hoursPerWeek: "2 ساعتان",
+        levels: {
+          "4M": {
+            competency: "يحل مشكلات علمية وتكنولوجية بتوظيف مفاهيم المادة وتحولاتها (المحاليل الشاردية والتحليل الكهربائي)، الميكانيك والظواهر الميكانيكية، والظواهر الكهربائية (الأمن الكهربائي والتوتر المتناوب).",
+            sequences: [
+              {
+                num: 1,
+                title: "المادة وتحولاتها: المحاليل الكيميائية والشاردية",
+                resources: ["الشاردة والمحلول الشاردي والناقلية الكهربائية", "التحليل الكهربائي البسيط لمحلول كلور القصدير أو كلور الزنك", "تفاعل محلول حمضي مع معدن ومع كربونات الكالسيوم"],
+                target: "أن يفسر حركة الشوارد ويكتب معادلات التفاعل الكيميائي بالصيغة الشاردية والإحصائية.",
+                duration: "10 ساعات",
+                assessment: "تفسير تنظيف ترسبات الكلس (الطرطير) باستعمال روح الملح مع اتخاذ احتياطات الأمن."
+              },
+              {
+                num: 2,
+                title: "الظواهر الميكانيكية: القوى وتوازن جسم صلب",
+                resources: ["الجملة الميكانيكية ومفهوم القوة وشعاعها", "الثقل والكتلة ودافعة أرخميدس في السوائل", "توازن جسم صلب خاضع لقوتين أو ثلاث قوى غير متوازية"],
+                target: "أن يمثل القوى بدقة ويشرح شروط طفو أو غوص الأجسام في السوائل.",
+                duration: "12 ساعة",
+                assessment: "حساب كتلة تمثال مغمور في الماء وتعيين دافعة أرخميدس المؤثرة عليه."
+              },
+              {
+                num: 3,
+                title: "الظواهر الكهربائية: التيار الكهربائي المتناوب والأمن الكهربائي",
+                resources: ["إنتاج التيار المتناوب وظاهرة التحريض الكهرومغناطيسي", "راسم الاهتزاز المهبطي وحساب الدور والتواتر والتوتر الأعظمي", "قواعد الأمن الكهربائي (المنصهرة، القاطع التفاضلي، المأخذ الأرضي)"],
+                target: "أن يشخص أعطال الشبكة الكهربائية المنزلية ويقترح حلولاً تقنية لتفادي الصعق.",
+                duration: "10 ساعات",
+                assessment: "معالجة مخطط شبكة منزلية تعاني من انقطاع التيار عند تشغيل الغسالة والفرن معاً."
+              }
+            ]
+          },
+          "3M": {
+            competency: "يوظف الطاقة والتحولات الطاقوية ومبدأ انحفاظ الطاقة في دارات كهربائية وتفاعلات كيميائية.",
+            sequences: [
+              { num: 1, title: "الطاقة والتحولات الطاقوية", resources: ["السلسلة الوظيفية والسلسلة الطاقوية", "مبدأ انحفاظ الطاقة والاستطاعة"], target: "تمثيل السلاسل الطاقوية لمحطة توليد كهرومائية.", duration: "10 سا", assessment: "حساب تكلفة استهلاك مكيف هوائي." }
+            ]
+          },
+          "2M": {
+            competency: "يوظف المادة وتحولاتها الفيزيائية والكيميائية، والسرعة والحركة المنتظمة والمتغيرة.",
+            sequences: [
+              { num: 1, title: "المادة وتحولاتها: انحفاظ الكتلة", resources: ["التحول الكيميائي والفيزيائي", "الذرات والجزيئات والرموز الكيميائية"], target: "موازنة معادلة احتراق غاز الميثان.", duration: "10 سا", assessment: "مخاطر غاز أحادي أكسيد الكربون وطرق الوقاية." }
+            ]
+          },
+          "1M": {
+            competency: "يقيس المقادير الفيزيائية (الكتلة، الحجم، درجة الحرارة) ويركب دارات كهربائية بسيطة مع تطبيق قواعد السلامة.",
+            sequences: [
+              { num: 1, title: "القياسات وحالات المادة", resources: ["قياس الحجم والكتلة والكتلة الحجمية", "الخلائط والذوبان والتقطير"], target: "تعيين الكتلة الحجمية لقطعة معدنية مجهولة.", duration: "10 سا", assessment: "التمييز بين زيت مغشوش وزيت نقي مخبرياً." }
+            ]
+          }
+        }
+      },
+      {
+        id: "histgeo",
+        name: "التاريخ والجغرافيا",
+        icon: "fa-earth-africa",
+        hoursPerWeek: "3 ساعات",
+        levels: {
+          "4M": {
+            competency: "يحلل محطات الثورة التحريرية الجزائرية (1954-1962) والتحولات الجغرافية والديموغرافية والاقتصادية للجزائر معتزاً بالسيادة الوطنية والهوية المستقلة.",
+            sequences: [
+              {
+                num: 1,
+                title: "التاريخ: الوثائق التاريخية والحركة الوطنية (1919-1953)",
+                resources: ["دراسة وثيقة تاريخية (نداء أول نوفمبر ومخطط دي بورمون)", "اتجاهات الحركة الوطنية ومطالبها السياسية", "أزمة حركة انتصار الحريات الديمقراطية وتأسيس المنظمة الخاصة CRUA"],
+                target: "أن يحلل نداء أول نوفمبر وفق المنهجية الرسمية (طبيعة الوثيقة، مصدرها، الإطار الزماني والمكاني، وتحليل الأفكار).",
+                duration: "10 ساعات",
+                assessment: "تحليل بيان سياسي يبرز حتمية اللجوء إلى الكفاح المسلح بعد مجازر 8 ماي 1945."
+              },
+              {
+                num: 2,
+                title: "التاريخ: الثورة التحريرية الكبرى (1954-1962)",
+                resources: ["مرحلة الانطلاق وهجومات الشمال القسنطيني 20 أوت 1955", "مؤتمر الصومام 1956 وهيكلة الثورة عسكرياً وسياسياً", "المفاوضات واتفاقيات إيفيان واسترجاع السيادة الوطنية"],
+                target: "أن يستخلص عبقرية الثورة الجزائرية في التدويل والانتصار على الدبلوماسية الفرنسية.",
+                duration: "12 ساعة",
+                assessment: "إعداد معرض توثيقي تخليداً للذكرى السبعين لاندلاع ثورة التحرير."
+              },
+              {
+                num: 3,
+                title: "الجغرافيا: المجال الجغرافي والسكان في الجزائر",
+                resources: ["الموقع الجغرافي والفلكي وأهميته الاستراتيجية", "التضاريس والمناخ والشبكة الهيدروغرافية (الأودية)", "توزيع السكان والمدن ومشكلات التنمية الاقتصادية"],
+                target: "أن يربط بين تباين التضاريس وتوزيع الكثافة السكانية في الأقاليم الشمالية والجنوبية.",
+                duration: "10 ساعات",
+                assessment: "اقتراح حلول تنموية للحد من النزوح الريفي نحو الشريط الساحلي."
+              }
+            ]
+          },
+          "3M": {
+            competency: "يدرس الدولة العثمانية وعلاقتها بالجزائر، وموقع قارة أوقيانوسيا وإفريقيا وإمكاناتها الطبيعية.",
+            sequences: [
+              { num: 1, title: "الجزائر في العهد العثماني والمقاومة البحرية", resources: ["نشأة الأسطول الجزائري", "معركة نافارين ونتائجها"], target: "إبراز مكانة الجزائر الدولية في حوض البحر الأبيض المتوسط.", duration: "10 سا", assessment: "دراسة وثيقة عثمانية أثرية." }
+            ]
+          },
+          "2M": {
+            competency: "يدرس العالم الإسلامي في العصر الوسيط وقارة آسيا وأمريكا جغرافياً واقتصادياً.",
+            sequences: [
+              { num: 1, title: "الفتوحات الإسلامية في المغرب وإفريقيا", resources: ["مراحل الفتح الإسلامي للمغرب العربي", "تأسيس مدينة القيروان وتاهرت"], target: "إبراز دور طارق بن زياد وموسى بن نصير في الحضارة الإنسانية.", duration: "8 سا", assessment: "خريطة مسارات الفتح." }
+            ]
+          },
+          "1M": {
+            competency: "يستوعب العصور التاريخية القديمة وشمال إفريقيا في فجر التاريخ وعناصر البيئة المحلية وتوزع اليابسة والماء.",
+            sequences: [
+              { num: 1, title: "إنسان ما قبل التاريخ في شمال إفريقيا", resources: ["عصور ما قبل التاريخ", "آثار الطاسيلي والهقار ونقوش الكهوف"], target: "الافتخار بعراقة التراث الحضاري للصحراء الجزائرية.", duration: "8 سا", assessment: "تقرير عن حظيرة الطاسيلي المسجلة لدى اليونسكو." }
+            ]
+          }
+        }
+      },
+      {
+        id: "islamic",
+        name: "التربية الإسلامية",
+        icon: "fa-mosque",
+        hoursPerWeek: "2 ساعتان",
+        levels: {
+          "4M": {
+            competency: "يتمثل هدي القرآن الكريم والسنة النبوية، ويعمق الإيمان بالقضاء والقدر، ويتبنى القيم الأخلاقية والأسرية (صلة الرحم، التكافل، حفظ اللسان)، ويدرس السيرة النبوية (فتح مكة وحجة الوداع).",
+            sequences: [
+              {
+                num: 1,
+                title: "العقيدة والقرآن: سورة النبإ والإيمان بالقضاء والقدر",
+                resources: ["حفظ وفهم وشرح سورة النبإ وأهوال يوم القيامة", "الإيمان بالقضاء والقدر ومراتبه وثمراته في طمأنينة النفس", "الحج والعمرة: أحكامهما ومقاصدهما التربوية"],
+                target: "أن يستنتج أثر الإيمان بالقضاء والقدر في الرضا والصبر على الابتلاء.",
+                duration: "8 ساعات",
+                assessment: "مقال توجيهي حول دور الرضا بالقدر في التقليل من القلق والاكتئاب لدى المراهقين."
+              },
+              {
+                num: 2,
+                title: "السيرة والأسرة: فتح مكة وصلة الرحم",
+                resources: ["فتح مكة: أسبابه وأحداثه وموقف العفو النبوي العظيم", "صلة الرحم وبر الوالدين في ضوء الآيات والأحاديث", "حسن الجوار والتعايش السلمي"],
+                target: "أن يقتدي بسلوك النبي صلى الله عليه وسلم في التسامح والعفو عند المقدرة.",
+                duration: "8 ساعات",
+                assessment: "عرض خطبة حول صلة الأرحام ونبذ القطيعة والخلافات العائلية."
+              }
+            ]
+          },
+          "3M": {
+            competency: "يفهم سورة الحشر ومسؤولية الفرد في المجتمع، وأحكام الزكاة والصدقة وصوم رمضان.",
+            sequences: [
+              { num: 1, title: "سورة الحشر وأحكام الزكاة", resources: ["تلاوة وفهم سورة الحشر", "مصارف الزكاة الثمانية وحكمتها الاقتصادية"], target: "إدراك الدور الاجتماعي للزكاة في القضاء على الفقر.", duration: "8 سا", assessment: "حساب نصاب الزكاة الشرعي بالأوراق النقدية المعاصرة." }
+            ]
+          },
+          "2M": {
+            competency: "يتعلم الطهارة الصغرى والكبرى وأحكام الصلاة، وسيرة الرسول صلى الله عليه وسلم في مكة والمدينة.",
+            sequences: [
+              { num: 1, title: "الصلاة وأحكام السهو والمسبوق", resources: ["سجود السهو: أسبابه وأحكامه", "صلاة الجمعة والعيدين والجنازة"], target: "أداء الصلوات المفروضة جماعة بهدوء وخشوع.", duration: "8 سا", assessment: "تطبيق عملي لأحكام سجود السهو في المصلى." }
+            ]
+          },
+          "1M": {
+            competency: "يتعرف على أركان الإسلام والإيمان، الطهارة وأحكام الوضوء والغسل والتيمم، وآداب الأخوة في الإسلام.",
+            sequences: [
+              { num: 1, title: "الإيمان وأركان الإسلام والطهارة", resources: ["أركان الإسلام وأركان الإيمان", "الوضوء والغسل نظرياً وعملياً"], target: "الحفاظ على النظافة الشخصية والوضوء الدائم للصلاة.", duration: "8 سا", assessment: "مخطط بياني يوضح فرائض وسنن الوضوء." }
+            ]
+          }
+        }
+      },
+      {
+        id: "civic",
+        name: "التربية المدنية",
+        icon: "fa-scale-balanced",
+        hoursPerWeek: "1 ساعة",
+        levels: {
+          "4M": {
+            competency: "يمارس المواطنة الواعية المسؤولة، ويدرك آليات فض النزاعات سلمياً (الصلح والوساطة)، ودور المؤسسات الدستورية والقضائية، وحقوق الإنسان في الجزائر.",
+            sequences: [
+              {
+                num: 1,
+                title: "الحياة الجماعية: الصلح والوساطة القضائية",
+                resources: ["الصلح ومفهومه وأهميته الاجتماعية وأدلته القانونية والشرعية", "الوساطة القضائية وإجراءاتها ومجالات تطبيقها", "أثر الحلول الودية في تخفيف العبء على المحاكم وترسيخ السلم"],
+                target: "أن يميز بين الصلح العرفي والوساطة القضائية ويفضل الحل السلمي للنزاعات.",
+                duration: "6 ساعات",
+                assessment: "محاكاة جلسة وساطة مدرسية لفض نزاع بين تلميذين دون اللجوء للمجلس التأديبي."
+              },
+              {
+                num: 2,
+                title: "المؤسسات الدستورية والقضاء في الجزائر",
+                resources: ["القضاء المدني والقضاء الإداري ودرجات التقاضي (المحكمة، المجلس، المحكمة العليا)", "المحاكمة العادلة وضمانات المتهم والعلنية", "المجلس الدستوري / المحكمة الدستورية ودورها في حماية الحقوق"],
+                target: "أن يتعرف على هيكل القضاء الجزائري ويدرك مبدأ استقلالية القضاء وقرينة البراءة.",
+                duration: "7 ساعات",
+                assessment: "زيارة ميدانية لمقر محكمة ابتدائية وتحرير تقرير حول سير جلسة محاكمة علنية."
+              }
+            ]
+          },
+          "3M": {
+            competency: "يدرس الهوية والمواطنة وتراث الأمة، ودور المنظمات الإنسانية الدولية (الهلال الأحمر واليونيسف).",
+            sequences: [
+              { num: 1, title: "الهوية والتراث الوطني", resources: ["المحميات الوطنية والتراث المادي واللامادي", "دور الهلال الأحمر الجزائري"], target: "المساهمة في حملات التضامن المدرسي وحماية الآثار.", duration: "6 سا", assessment: "بطاقة فنية حول اللباس التقليدي أو معلم أثري جزائري." }
+            ]
+          },
+          "2M": {
+            competency: "يتعرف على المجالس المنتخبة (البلدية والولائية والمجلس الشعبي الوطني) ودورها التنموي.",
+            sequences: [
+              { num: 1, title: "المجالس الشعبية المنتخبة", resources: ["صلاحيات رئيس البلدية والمجلس الشعبي البلدي APC", "المجلس الولائي APW والبرلمان"], target: "إدراك قيمة صوت المواطن في الانتخابات المحلية.", duration: "6 سا", assessment: "محاكاة انتخابات برلمان الطفل في القسم." }
+            ]
+          },
+          "1M": {
+            competency: "يستوعب النظام الداخلي للمؤسسة التربوية وحقوق وواجبات التلميذ، والحرص على النظافة والممتلكات العامة.",
+            sequences: [
+              { num: 1, title: "المؤسسة التربوية والنظام الداخلي", resources: ["هياكل المتوسطة الإدارية والبيداغوجية", "حقوق وواجبات التلميذ وفق القرار الوزاري"], target: "الالتزام بالانضباط المدرسي والمحافظة على الطاولات والجدران.", duration: "6 سا", assessment: "ميثاق التلميذ المثالي داخل القسم." }
+            ]
+          }
+        }
+      },
+      {
+        id: "french",
+        name: "اللغة الفرنسية (Français)",
+        icon: "fa-language",
+        hoursPerWeek: "4 ساعات",
+        levels: {
+          "4M": {
+            competency: "Comprendre et produire à l'oral et à l'écrit des textes argumentatifs incitant à la découverte du patrimoine, défendant une cause humanitaire ou protégeant l'environnement (Épreuve du BEM).",
+            sequences: [
+              {
+                num: 1,
+                title: "Projet 1 : Inciter au tourisme et à la découverte de l'Algérie",
+                resources: ["Texte argumentatif : thèse, arguments et connecteurs logiques", "Le vocabulaire mélioratif et d'appréciation", "Les verbes d'opinion et la complétive", "La proposition subordonnée relative", "Production écrite d'un dépliant touristique"],
+                target: "Rédiger un paragraphe argumentatif vantant la beauté d'une région algérienne (ex: Les Aurès, la Casbah, la Saoura).",
+                duration: "12 heures",
+                assessment: "Conception d'une affiche vantant le tourisme saharien en Algérie."
+              },
+              {
+                num: 2,
+                title: "Projet 2 : Lutter contre la violence et la discrimination",
+                resources: ["Les arguments fondés sur l'exemple", "Le lexique de la paix et du vivre-ensemble", "Le rapport de cause et de conséquence", "Le mode subjonctif dans l'expression du sentiment"],
+                target: "Défendre une cause civique par une argumentation rigoureuse et des exemples concrets.",
+                duration: "12 heures",
+                assessment: "Rédiger un plaidoyer contre le harcèlement scolaire dans le journal de l'école."
+              }
+            ]
+          },
+          "3M": {
+            competency: "Raconter un fait divers, un récit de vie et une biographie de personnages historiques algériens.",
+            sequences: [
+              { num: 1, title: "Le fait divers et les événements insolites", resources: ["Passé composé et imparfait", "Voix active et voix passive", "Le champ lexical de l'accident"], target: "Écrire un article court relatant un acte de bravoure citoyenne.", duration: "10 h", assessment: "Rédaction d'un fait divers sur les pompiers de la protection civile." }
+            ]
+          },
+          "2M": {
+            competency: "Comprendre et produire des contes, fables et récits légendaires.",
+            sequences: [
+              { num: 1, title: "Le conte merveilleux et imaginaire", resources: ["La formule d'ouverture", "Le schéma narratif", "Les adjectifs qualificatifs"], target: "Inventer la suite d'un conte traditionnel maghrébin.", duration: "10 h", assessment: "Conte illustré pour enfants." }
+            ]
+          },
+          "1M": {
+            competency: "Comprendre et produire des textes explicatifs et prescriptifs portant sur l'hygiène, la santé et les nouvelles technologies.",
+            sequences: [
+              { num: 1, title: "Les règles d'hygiène et la santé corporelle", resources: ["Le présent de vérité générale", "La nominalisation à base verbale", "La reformulation"], target: "Expliquer l'importance du lavage des mains aux élèves.", duration: "10 h", assessment: "Guide d'hygiène pour la cantine scolaire." }
+            ]
+          }
+        }
+      },
+      {
+        id: "english",
+        name: "اللغة الإنجليزية (English)",
+        icon: "fa-earth-americas",
+        hoursPerWeek: "3 ساعات",
+        levels: {
+          "4M": {
+            competency: "Interact, interpret and produce oral and written messages of description, narration and argumentation about prominent figures, national historical landmarks, eco-tourism and future careers (BEM prep).",
+            sequences: [
+              {
+                num: 1,
+                title: "Sequence 1: Universal Landmarks and Outstanding Figures",
+                resources: ["Describing famous landmarks (location, date, architect, features)", "Biographies of Algerian historical & cultural heroes (Kateb Yacine, Didouche Mourad)", "Passive voice (present & past simple)", "Comparative of equality & superiority (as...as, more...than)", "Sequencers and discourse markers"],
+                target: "Write an itinerary and a formal presentation about an Algerian UNESCO World Heritage Site.",
+                duration: "12 hours",
+                assessment: "Writing a blog post about El-Kala National Park or Djemila ruins for foreign exchange students."
+              },
+              {
+                num: 2,
+                title: "Sequence 2: Me, My Personality and My Life Experiences",
+                resources: ["Adjectives of personality and character traits", "Present perfect tense with since and for", "Expressing similarities and differences (like, unlike, whereas)", "Writing a curriculum vitae (CV) and personal statement"],
+                target: "Talk about dreams, ideal future career, and volunteering in Algerian charitable associations.",
+                duration: "10 hours",
+                assessment: "A formal cover letter applying for a volunteer role in Algerian Red Crescent."
+              }
+            ]
+          },
+          "3M": {
+            competency: "Describe lifestyles, healthy habits, scientific inventions and traditional occupations.",
+            sequences: [
+              { num: 1, title: "Sequence 1: Me, My Abilities, My Interests and My Personality", resources: ["Modal verbs (can, could)", "Past continuous tense", "Gerund vs Infinitive"], target: "Introduce personal skills and hobbies in a digital video presentation.", duration: "10 h", assessment: "School interview simulation." }
+            ]
+          },
+          "2M": {
+            competency: "Communicate about shopping, food, public amenities and environmental protection in the neighborhood.",
+            sequences: [
+              { num: 1, title: "Sequence 1: Signs, Directions and City Amenities", resources: ["Imperatives for giving directions", "Prepositions of place", "Expressing quantities (many, much, a lot of)"], target: "Guide a tourist to the post office and local museum.", duration: "8 h", assessment: "A town map with written directions." }
+            ]
+          },
+          "1M": {
+            competency: "Greet, introduce oneself, exchange personal information (family, age, school, pets) and everyday routines.",
+            sequences: [
+              { num: 1, title: "Sequence 1: Hello, Welcome to My School", resources: ["Verb to be and to have", "Personal pronouns and possessive adjectives", "Numbers from 1 to 100", "Classroom language"], target: "Write a short personal profile for the school bulletin board.", duration: "10 h", assessment: "ID Student Card creation." }
+            ]
+          }
+        }
+      },
+      {
+        id: "informatique",
+        name: "الإعلام الآلي والتكنولوجيا",
+        icon: "fa-laptop-code",
+        hoursPerWeek: "1 ساعة",
+        levels: {
+          "4M": {
+            competency: "يتحكم في تقنيات البرمجة الأولية بالكتل (Scratch)، حل المشكلات الحسابية بالخوارزميات، وتصميم مواقع تفاعلية وعروض تقديمية آمنة.",
+            sequences: [
+              {
+                num: 1,
+                title: "الخوارزميات والبرمجة المرئية ببيئة سكراتش Scratch",
+                resources: ["مفهوم الخوارزمية، المتغيرات والشروط التكرارية", "بيئة سكراتش وتنسيق المقاطع البرمجية والأصوات", "برمجة ألعاب تعليمية وتطبيقات حساب المساحات والمحيطات"],
+                target: "أن يصمم مشروعاً برمجياً يحسب تلقائياً القاسم المشترك الأكبر PGCD بالبرمجة.",
+                duration: "8 ساعات",
+                assessment: "عرض برنامج تفاعلي يجري مسابقات مدرسية في الحساب الذهني."
+              }
+            ]
+          },
+          "3M": {
+            competency: "يتحكم في الجداول الحسابية المتقدمة (MS Excel) والصيغ والدوال الرياضية والتمثيل البياني.",
+            sequences: [
+              { num: 1, title: "المجدول Excel والتحليل الإحصائي", resources: ["إدخال البيانات والمعادلات (SUM, AVERAGE)", "إنشاء المخططات البيانية الدائرية والأعمدة"], target: "حساب معدلات تلاميذ القسم واستخراج الرتب تلقائياً.", duration: "8 سا", assessment: "دفتر تنقيط إلكتروني متكامل." }
+            ]
+          },
+          "2M": {
+            competency: "يحرر مستندات نصية احترافية ويعالج الصور والخرائط الذهنية الرقمية.",
+            sequences: [
+              { num: 1, title: "معالجة النصوص وتنسيق المجلات المدرسية", resources: ["الجداول، ترقيم الصفحات، الهوامش ورأس الصفحة"], target: "إخراج مطوية مدرسية ثلاثية الطيات.", duration: "6 سا", assessment: "مطوية يوم الشهيد." }
+            ]
+          },
+          "1M": {
+            competency: "يتعرف على مكونات الحاسوب المادية والبرمجية، نظام التشغيل ويندوز، وقواعد أمن البيانات والإنترنت.",
+            sequences: [
+              { num: 1, title: "مكونات الحاسوب ولوحة التحكم", resources: ["وحدات الإدخال والإخراج والمعالجة المركزية CPU", "إنشاء وتسمية وتنظيم المجلدات والملفات"], target: "التحكم في الفأرة ولوحة المفاتيح وحفظ الأعمال بأمان.", duration: "6 سا", assessment: "تنظيم شجرة مجلدات المواد الدراسية على سطح المكتب." }
+            ]
+          }
+        }
+      },
+      {
+        id: "sport",
+        name: "التربية البدنية والرياضية",
+        icon: "fa-person-running",
+        hoursPerWeek: "2 ساعتان",
+        levels: {
+          "4M": {
+            competency: "يطبق القوانين والخطط التكتيكية في الرياضات الجماعية (كرة اليد، كرة السلة) ويحقق تحسناً في السرعة والوثب والرمي (اختبار شهادة BEM).",
+            sequences: [
+              {
+                num: 1,
+                title: "ألعاب القوى: السرعة والرمي والوثب لشهادة BEM",
+                resources: ["الانطلاق المنخفض وتوزيع الجهد في سباق 60م و 800م", "تقنيات رمي الجلة (الجثو والاندفاع)", "الوثب الطويل وتنسيق مراحل الارتقاء والطيران والهبوط"],
+                target: "تحقيق الحد الأدنى من زمن الأداء المبرمج وزارياً لعلامة الامتحان الرسمي.",
+                duration: "10 ساعات",
+                assessment: "محاكاة الامتحان العملي لشهادة التعليم المتوسط وتسجيل النتائج."
+              }
+            ]
+          },
+          "3M": {
+            competency: "تطوير اللياقة البدنية والتحمل الهوائي والروح الرياضية في المنافسات المدرسية.",
+            sequences: [
+              { num: 1, title: "الرياضات الجماعية: تكتيك الدفاع والهجوم", resources: ["التمرير الحاسم، التمركز في المنطقة، والتحكيم الفصلي"], target: "الالتزام بالروح الرياضية وتقبل قرارات الحكم.", duration: "8 سا", assessment: "مباراة كرة يد بين الأقسام." }
+            ]
+          },
+          "2M": {
+            competency: "التنسيق الحركي والتوازن والمرونة من خلال الحركات الجمبازية والسباقات المرحلية.",
+            sequences: [
+              { num: 1, title: "الجمباز الفني والوثب", resources: ["الدحرجة الأمامية والخلفية، الوقوف على اليدين، والقفز"], target: "تنفيذ جملة حركية متسلسلة بتوازن وثبات.", duration: "8 سا", assessment: "عرض حركي على البساط." }
+            ]
+          },
+          "1M": {
+            competency: "التكيف مع المجهود البدني والتعرف على نبضات القلب وقواعد الإحماء والتنفس السليم.",
+            sequences: [
+              { num: 1, title: "الإحماء وقواعد السلامة الرياضية", resources: ["أنواع الإحماء العام والخاص، قياس النبض الشرياني", "تجنب التشنجات العضلية وشرب الماء"], target: "إدراك أهمية النشاط البدني المنتظم لصحة الجسم.", duration: "6 سا", assessment: "قياس النبض قبل وبعد الجري لمدة 5 دقائق." }
+            ]
+          }
+        }
+      },
+      {
+        id: "art",
+        name: "التربية التشكيلية والموسيقية",
+        icon: "fa-palette",
+        hoursPerWeek: "1 ساعة",
+        levels: {
+          "4M": {
+            competency: "يوظف تقنيات الرسم المنظوري والظل والنور، والزخرفة الإسلامية والتراث الشعبي الجزائري في إنجاز أعمال فنية إبداعية.",
+            sequences: [
+              {
+                num: 1,
+                title: "المنظور الخطي والزخرفة النباتية والهندسية الجزائرية",
+                resources: ["نقطة التلاشي وخط الأفق وإسقاط الأشكال ثلاثية الأبعاد", "الألوان الحارة والباردة والتضاد اللوني", "دراسة وحدات زخرفية من قصر المشور بتلمسان أو زليج القصبة"],
+                target: "رسم لوحة تعبر عن الزقاق الجزائري العتيق بالمنظور وقواعد الظل والنور.",
+                duration: "8 ساعات",
+                assessment: "إقامة معرض تشكيلي في ساحة المؤسسة لرسومات التلاميذ."
+              }
+            ]
+          },
+          "3M": {
+            competency: "يتعرف على فن الخط العربي الأصيل (الثلث، الكوفي، الرقعة) وجمالياته المعمارية.",
+            sequences: [
+              { num: 1, title: "جماليات الخط العربي والتركيب اللوني", resources: ["ميزان الحروف بالنقطة، الخط الكوفي الهندسي"], target: "كتابة حكمة وطنية بالخط العربي على لوحة كانفاس.", duration: "6 سا", assessment: "لوحة خطية لعلم الجزائر." }
+            ]
+          },
+          "2M": {
+            competency: "يميز بين درجات الألوان والتوليفات الطبيعية وعناصر الطبيعة الصامتة.",
+            sequences: [
+              { num: 1, title: "الطبيعة الصامتة والتلوين المائي", resources: ["تدرج الظلال، الإضاءة الجانبية، الألوان المائية (Aquarelle)"], target: "رسم آنية فخارية تقليدية بتدرجات الضوء.", duration: "6 سا", assessment: "لوحة الفخار الجزائري." }
+            ]
+          },
+          "1M": {
+            competency: "يتعرف على الدائرة اللونية (الألوان الأساسية والثانوية والمحايدة) والمساحات التعبيرية.",
+            sequences: [
+              { num: 1, title: "الدائرة اللونية وقواعد التلوين", resources: ["مزج الألوان، الألوان الحارة والباردة، الفرشاة"], target: "رسم تكوين لوني متناسق يعبر عن الربيع.", duration: "6 سا", assessment: "لوحة شروق الشمس على الواحات." }
+            ]
+          }
+        }
+      }
+    ];
+
+    const INSPECTOR_CHECKLIST_DATA = [
+      { id: "c1", title: "دفتر التحضير اليومي (المذكرات)", desc: "مذكرات مرقمة ومؤرخة باليوم والساعة ومطابقة لمنهاج الجيل الثاني.", isDone: true },
+      { id: "c2", title: "دفتر النصوص المطبوع", desc: "مرقم الصفحات ومختوم من الإدارة، ومدون به كافة الحصص بدون أي انقطاع.", isDone: true },
+      { id: "c3", title: "دفتر التنقيط والملاحظات", desc: "يحتوي على علامات التقويم المستمر، الفروض المحروسة وسجل الغيابات.", isDone: false },
+      { id: "c4", title: "المخطط السنوي للتعلمات 2025/2026", desc: "مؤشر ومختوم من قبل السيد مفتش المادة في بداية الموسم.", isDone: true },
+      { id: "c5", title: "المنهاج والوثيقة المرافقة الورقية", desc: "النسخة الرسمية الوزارية جاهزة على مكتب الأستاذ أثناء الحصة.", isDone: false },
+      { id: "c6", title: "دفتر المعالجة البيداغوجية والتشخيص", desc: "يدون به التلاميذ المتعثرون وخطة الاستدراك والتمارين العلاجية.", isDone: false },
+      { id: "c7", title: "كراريس التلاميذ المصححة", desc: "تصحيح دوري ومؤشر بتاريخ المراقبة والتصويبات اللغوية والعلمية.", isDone: true },
+      { id: "c8", title: "التوزيع الشهري للمادة", desc: "معلق بخزانة القسم أو محفوظ في الحافظة البيداغوجية للأستاذ.", isDone: false },
+    ];
+
+    /* =========================================================
+       2. USER & AUTHENTICATION STATE (EMAIL & FACEBOOK)
+       ========================================================= */
+    let currentUser = null;
+    let authCurrentRole = 'teacher'; // 'teacher' or 'admin'
+    let authCurrentTab = 'register'; // 'register' or 'login'
+
+    // Mock initial teachers registered for admin panel
+    let schoolTeachers = [
+      { id: 1, name: "أ. سمية بن عيسى", subject: "math", subName: "الرياضيات", level: "4M", method: "Facebook", date: "منذ ساعتين", status: "معلق" },
+      { id: 2, name: "أ. عبد القادر زروقي", subject: "arabic", subName: "اللغة العربية", level: "3M", method: "البريد الإلكتروني", date: "منذ 4 ساعات", status: "معلق" },
+      { id: 3, name: "أ. مريم بوعلام", subject: "scnat", subName: "العلوم الطبيعية", level: "4M", method: "Facebook", date: "أمس", status: "مقبول" },
+      { id: 4, name: "أ. كريم منصوري", subject: "phys", subName: "الفيزياء والتكنولوجيا", level: "2M", method: "البريد الإلكتروني", date: "12 أكتوبر 2025", status: "مقبول" },
+      { id: 5, name: "أ. فاطمة خثير", subject: "french", subName: "اللغة الفرنسية", level: "4M", method: "Facebook", date: "10 أكتوبر 2025", status: "مقبول" },
+    ];
+
+    /* =========================================================
+       3. INITIALIZATION ON PAGE LOAD
+       ========================================================= */
+    window.addEventListener('DOMContentLoaded', () => {
+      initMarquee();
+      populateSubjectDropdowns();
+      renderTeacherGuide();
+      renderInspectorChecklist();
+      renderSubjectsGrid();
+      
+      // Check stored user session in localStorage
+      const savedUser = localStorage.getItem('manara_user_session');
+      if (savedUser) {
+        try {
+          currentUser = JSON.parse(savedUser);
+          updateAuthUI();
+        } catch(e) {
+          localStorage.removeItem('manara_user_session');
+        }
+      }
+
+      // Check stored checklist state
+      const savedChecklist = localStorage.getItem('manara_checklist_state');
+      if (savedChecklist) {
+        try {
+          const parsed = JSON.parse(savedChecklist);
+          INSPECTOR_CHECKLIST_DATA.forEach(item => {
+            if (parsed.hasOwnProperty(item.id)) {
+              item.isDone = parsed[item.id];
+            }
+          });
+          renderInspectorChecklist();
+        } catch(e) {}
+      }
+    });
+
+    function initMarquee() {
+      const container = document.getElementById('wilayasMarquee');
+      if (!container) return;
+      const html = WILAYAS.map(w => `<span class="inline-flex items-center gap-1.5 shrink-0"><span class="w-1.5 h-1.5 rounded-full bg-gold-400"></span>${w}</span>`).join('');
+      container.innerHTML = html + html; // duplicate for infinite scroll
+    }
+
+    function populateSubjectDropdowns() {
+      const selects = [
+        document.getElementById('guideSubjectSelect'),
+        document.getElementById('authSubjectSelect'),
+        document.getElementById('tCurrentSubject')
+      ];
+
+      selects.forEach(select => {
+        if (!select) return;
+        select.innerHTML = SUBJECTS_DATA.map(s => `<option value="${s.id}">${s.name} (${s.hoursPerWeek})</option>`).join('');
+      });
+    }
+
+    /* =========================================================
+       4. TEACHER GUIDE RENDERER (INTERACTIVE LOGIC)
+       ========================================================= */
+    let currentGuideLevel = '4M';
+
+    function changeGuideLevel(lvl) {
+      currentGuideLevel = lvl;
+      document.querySelectorAll('.guide-lvl-btn').forEach(btn => {
+        if (btn.dataset.lvl === lvl) {
+          btn.classList.add('active', 'bg-dzgreen-600', 'text-white', 'shadow-sm');
+          btn.classList.remove('text-slate-600');
+        } else {
+          btn.classList.remove('active', 'bg-dzgreen-600', 'text-white', 'shadow-sm');
+          btn.classList.add('text-slate-600');
+        }
+      });
+      renderTeacherGuide();
+    }
+
+    function renderTeacherGuide() {
+      const subjectId = document.getElementById('guideSubjectSelect').value || 'math';
+      const container = document.getElementById('guideDisplayContainer');
+      const subject = SUBJECTS_DATA.find(s => s.id === subjectId) || SUBJECTS_DATA[0];
+      const levelData = subject.levels[currentGuideLevel] || subject.levels['4M'] || Object.values(subject.levels)[0];
+
+      let sequencesHtml = '';
+      levelData.sequences.forEach(seq => {
+        const resourcesList = seq.resources.map(r => `
+          <li class="flex items-start gap-2">
+            <i class="fa-solid fa-check text-dzgreen-600 mt-1 text-[11px]"></i>
+            <span>${r}</span>
+          </li>
+        `).join('');
+
+        sequencesHtml += `
+          <div class="bg-white rounded-2xl border border-slate-200/90 p-5 shadow-sm hover:border-dzgreen-400 transition card-hover">
+            <div class="flex flex-wrap items-center justify-between gap-2 border-b pb-3 mb-3">
+              <div class="flex items-center gap-2">
+                <span class="w-8 h-8 rounded-xl bg-dzgreen-50 text-dzgreen-700 flex items-center justify-center font-black text-xs border border-dzgreen-200">
+                  ${seq.num}
+                </span>
+                <h4 class="font-black text-sm text-slate-900">${seq.title}</h4>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="badge-chip bg-amber-50 text-amber-800 border border-amber-200 text-[11px]">
+                  <i class="fa-regular fa-clock"></i> ${seq.duration}
+                </span>
+                <button onclick="downloadSequenceWordFile('${subject.id}', '${currentGuideLevel}', ${seq.num})" class="btn-shine bg-dzgreen-600 hover:bg-dzgreen-700 text-white font-extrabold px-3 py-1.5 rounded-lg text-xs flex items-center gap-1.5 shadow-sm transition" title="تحميل مذكرة حقيقية Word لهذا المقطع">
+                  <i class="fa-solid fa-file-word text-gold-300"></i>
+                  <span>تنزيل المذكرة (.doc)</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-12 gap-4 text-xs">
+              <div class="md:col-span-6 space-y-2">
+                <div class="font-black text-dzgreen-800 flex items-center gap-1">
+                  <i class="fa-solid fa-layer-group text-gold-500"></i>
+                  <span>الموارد المعرفية والمفاهيمية (Savoirs):</span>
+                </div>
+                <ul class="space-y-1 text-slate-700 font-medium pr-1">
+                  ${resourcesList}
+                </ul>
+              </div>
+
+              <div class="md:col-span-6 space-y-2 bg-slate-50 p-3.5 rounded-xl border border-slate-100">
+                <div>
+                  <strong class="text-dzgreen-900 font-black block mb-0.5">الكفاءة المستهدفة (الهدف الإجرائي):</strong>
+                  <p class="text-slate-600 font-medium leading-relaxed">${seq.target}</p>
+                </div>
+                <div class="pt-1 border-t border-slate-200">
+                  <strong class="text-slate-700 font-black block mb-0.5">الوضعية الإدماجية والتقويم:</strong>
+                  <p class="text-slate-600 font-medium leading-relaxed">${seq.assessment}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+
+      container.innerHTML = `
+        <div class="bg-gradient-to-r from-emerald-50 via-teal-50 to-white border border-dzgreen-200 rounded-2xl p-5 shadow-sm">
+          <div class="flex flex-wrap items-center justify-between gap-3 mb-2">
+            <span class="badge-chip bg-dzgreen-700 text-white font-black text-xs">
+              <i class="fa-solid fa-award"></i> الكفاءة الختامية للطور (المقرر الوزاري)
+            </span>
+            <span class="text-xs font-bold text-slate-500">مستوى: ${getLevelName(currentGuideLevel)} • الحجم الساعي الأسبوعي: ${subject.hoursPerWeek}</span>
+          </div>
+          <p class="text-slate-800 font-bold text-sm sm:text-base leading-relaxed">
+            "${levelData.competency}"
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          <div class="flex items-center justify-between text-xs font-black text-slate-600">
+            <span>المقاطع البيداغوجية المبرمجة (${levelData.sequences.length} مقاطع معتمدة):</span>
+            <span class="text-dzgreen-700 font-bold"><i class="fa-solid fa-circle-check ml-1"></i> جميع المذكرات قابلة للتنزيل كملفات Word ممتلئة</span>
+          </div>
+          ${sequencesHtml}
+        </div>
+      `;
+    }
+
+    function getLevelName(lvl) {
+      switch(lvl) {
+        case '1M': return 'الأولى متوسط';
+        case '2M': return 'الثانية متوسط';
+        case '3M': return 'الثالثة متوسط';
+        case '4M': return 'الرابعة متوسط (مقبل على BEM)';
+        default: return lvl;
+      }
+    }
+
+    /* =========================================================
+       5. INSPECTOR CHECKLIST LOGIC
+       ========================================================= */
+    function renderInspectorChecklist() {
+      const container = document.getElementById('inspectorChecklistItems');
+      if (!container) return;
+
+      let completed = 0;
+      let html = '';
+
+      INSPECTOR_CHECKLIST_DATA.forEach((item, index) => {
+        if (item.isDone) completed++;
+        html += `
+          <div class="flex items-start gap-3 p-3 rounded-xl border ${item.isDone ? 'bg-emerald-50/70 border-emerald-300' : 'bg-slate-50 border-slate-200'} transition cursor-pointer" onclick="toggleChecklistItem('${item.id}')">
+            <input type="checkbox" ${item.isDone ? 'checked' : ''} class="w-4 h-4 mt-0.5 rounded text-dzgreen-600 focus:ring-dzgreen-500 cursor-pointer pointer-events-none">
+            <div class="flex-1 text-right">
+              <div class="text-xs font-black ${item.isDone ? 'text-dzgreen-900 line-through' : 'text-slate-900'}">${item.title}</div>
+              <div class="text-[11px] text-slate-500 font-medium">${item.desc}</div>
+            </div>
+            <span class="text-[10px] font-black ${item.isDone ? 'text-emerald-700 bg-emerald-100' : 'text-slate-400 bg-slate-200'} px-2 py-0.5 rounded-md">
+              ${item.isDone ? 'جاهز' : 'مطلوب'}
+            </span>
+          </div>
+        `;
+      });
+
+      container.innerHTML = html;
+      const pct = Math.round((completed / INSPECTOR_CHECKLIST_DATA.length) * 100);
+      const pctEl = document.getElementById('checklistPercent');
+      if (pctEl) pctEl.textContent = `${pct}%`;
+    }
+
+    function toggleChecklistItem(id) {
+      const item = INSPECTOR_CHECKLIST_DATA.find(x => x.id === id);
+      if (item) {
+        item.isDone = !item.isDone;
+        // save to localStorage
+        const stateMap = {};
+        INSPECTOR_CHECKLIST_DATA.forEach(i => stateMap[i.id] = i.isDone);
+        localStorage.setItem('manara_checklist_state', JSON.stringify(stateMap));
+        renderInspectorChecklist();
+        toast(`تم تحديث حالة الوثيقة: ${item.title}`, 'info');
+      }
+    }
+
+    function resetInspectorChecklist() {
+      INSPECTOR_CHECKLIST_DATA.forEach(i => i.isDone = false);
+      localStorage.removeItem('manara_checklist_state');
+      renderInspectorChecklist();
+      toast('تم إعادة ضبط قائمة المفتش بنجاح', 'info');
+    }
+
+    /* =========================================================
+       6. SUBJECTS CARD GRID (ALL 12 SUBJECTS)
+       ========================================================= */
+    function renderSubjectsGrid() {
+      const container = document.getElementById('subjectsCardGrid');
+      if (!container) return;
+
+      container.innerHTML = SUBJECTS_DATA.map(s => `
+        <div class="glass-card rounded-2xl p-4 border border-slate-200 shadow-sm hover:shadow-card hover:border-dzgreen-500 transition card-hover flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-dzgreen-50 text-dzgreen-700 flex items-center justify-center text-lg mb-3">
+              <i class="fa-solid ${s.icon}"></i>
+            </div>
+            <h3 class="font-black text-sm text-slate-800">${s.name}</h3>
+            <p class="text-[11px] text-slate-500 font-bold mt-1">الحجم الساعي: ${s.hoursPerWeek}</p>
+            <p class="text-[11px] text-slate-400 font-medium">1م إلى 4م • مذكرات الجيل الثاني</p>
+          </div>
+          <div class="mt-4 pt-2 border-t flex items-center justify-between">
+            <button onclick="selectSubjectForTeacherGuide('${s.id}')" class="text-xs font-black text-dzgreen-700 hover:text-dzgreen-800 flex items-center gap-1">
+              <span>استعراض المقاطع</span>
+              <i class="fa-solid fa-arrow-left text-[10px]"></i>
+            </button>
+            <button onclick="downloadSampleDoc('${s.id}', '4M')" class="text-slate-400 hover:text-dzgreen-600 text-xs" title="تحميل نموذج Word">
+              <i class="fa-solid fa-file-word"></i>
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function selectSubjectForTeacherGuide(subjectId) {
+      const select = document.getElementById('guideSubjectSelect');
+      if (select) {
+        select.value = subjectId;
+        renderTeacherGuide();
+        scrollToSection('teacherGuideSec');
+        toast('تم ضبط الدليل على المادة المختارة', 'success');
+      }
+    }
+
+    /* =========================================================
+       7. VIEW NAVIGATION & MODALS
+       ========================================================= */
+    function switchView(viewName) {
+      document.getElementById('view-home').classList.add('hidden');
+      document.getElementById('view-teacher').classList.add('hidden');
+      document.getElementById('view-admin').classList.add('hidden');
+
+      const target = document.getElementById(`view-${viewName}`);
+      if (target) {
+        target.classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      if (viewName === 'teacher') {
+        renderTeacherDashboard();
+      } else if (viewName === 'admin') {
+        renderAdminDashboard();
+      }
+    }
+
+    function scrollToSection(secId) {
+      const el = document.getElementById(secId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function toggleMobileMenu() {
+      const m = document.getElementById('mobileMenu');
+      if (m) m.classList.toggle('hidden');
+    }
+
+    function openAuth(tab = 'register', role = 'teacher') {
+      const modal = document.getElementById('authModal');
+      modal.classList.remove('hidden');
+      setAuthRole(role);
+      setAuthTab(tab);
+    }
+
+    function closeAuth() {
+      document.getElementById('authModal').classList.add('hidden');
+    }
+
+    function setAuthRole(role) {
+      authCurrentRole = role;
+      const btnT = document.getElementById('authBtnRoleTeacher');
+      const btnA = document.getElementById('authBtnRoleAdmin');
+      const tFields = document.getElementById('registerTeacherFields');
+      const aFields = document.getElementById('registerAdminFields');
+
+      if (role === 'teacher') {
+        btnT.classList.add('bg-gold-400', 'text-slate-950');
+        btnT.classList.remove('text-white');
+        btnA.classList.remove('bg-gold-400', 'text-slate-950');
+        btnA.classList.add('text-white');
+        if (tFields) tFields.classList.remove('hidden');
+        if (aFields) aFields.classList.add('hidden');
+      } else {
+        btnA.classList.add('bg-gold-400', 'text-slate-950');
+        btnA.classList.remove('text-white');
+        btnT.classList.remove('bg-gold-400', 'text-slate-950');
+        btnT.classList.add('text-white');
+        if (tFields) tFields.classList.add('hidden');
+        if (aFields) aFields.classList.remove('hidden');
+      }
+    }
+
+    function setAuthTab(tab) {
+      authCurrentTab = tab;
+      const regBtn = document.getElementById('tabToggleRegister');
+      const logBtn = document.getElementById('tabToggleLogin');
+      const nameGroup = document.getElementById('registerNameGroup');
+      const tFields = document.getElementById('registerTeacherFields');
+      const aFields = document.getElementById('registerAdminFields');
+      const submitText = document.getElementById('authSubmitText');
+      const modalTitle = document.getElementById('authModalTitle');
+
+      if (tab === 'register') {
+        regBtn.classList.add('bg-white', 'text-dzgreen-700', 'shadow-sm');
+        regBtn.classList.remove('text-slate-600');
+        logBtn.classList.remove('bg-white', 'text-dzgreen-700', 'shadow-sm');
+        logBtn.classList.add('text-slate-600');
+        nameGroup.classList.remove('hidden');
+        if (authCurrentRole === 'teacher') tFields.classList.remove('hidden');
+        else aFields.classList.remove('hidden');
+        submitText.textContent = 'إنشاء الحساب والدخول فوراً';
+        modalTitle.textContent = 'إنشاء حساب جديد';
+      } else {
+        logBtn.classList.add('bg-white', 'text-dzgreen-700', 'shadow-sm');
+        logBtn.classList.remove('text-slate-600');
+        regBtn.classList.remove('bg-white', 'text-dzgreen-700', 'shadow-sm');
+        regBtn.classList.add('text-slate-600');
+        nameGroup.classList.add('hidden');
+        tFields.classList.add('hidden');
+        aFields.classList.add('hidden');
+        submitText.textContent = 'تسجيل الدخول إلى حسابي';
+        modalTitle.textContent = 'تسجيل الدخول للواجهة الرسمية';
+      }
+    }
+
+    function handleAuthSubmit(e) {
+      e.preventDefault();
+      const email = document.getElementById('authEmailInput').value;
+      const name = document.getElementById('authNameInput').value || (authCurrentRole === 'teacher' ? 'أستاذ المادة' : 'السيد مدير المؤسسة');
+      const subject = document.getElementById('authSubjectSelect').value || 'math';
+      const level = document.getElementById('authLevelSelect').value || '4M';
+      const school = document.getElementById('authSchoolInput').value || 'متوسطة الشهيد زبانة - الجزائر';
+
+      const user = {
+        name: name,
+        email: email,
+        role: authCurrentRole,
+        subject: subject,
+        level: level,
+        school: school,
+        authType: 'email',
+        avatarText: name.charAt(0) || 'أ'
+      };
+
+      // Add to admin table if new teacher
+      if (authCurrentRole === 'teacher' && authCurrentTab === 'register') {
+        const subObj = SUBJECTS_DATA.find(s => s.id === subject);
+        schoolTeachers.unshift({
+          id: Date.now(),
+          name: name,
+          subject: subject,
+          subName: subObj ? subObj.name : 'الرياضيات',
+          level: level,
+          method: 'البريد الإلكتروني',
+          date: 'الآن',
+          status: 'مقبول'
+        });
+      }
+
+      currentUser = user;
+      localStorage.setItem('manara_user_session', JSON.stringify(user));
+      updateAuthUI();
+      closeAuth();
+
+      toast(`مرحباً بك ${user.name}! تم الدخول بنجاح.`, 'success');
+      goToMyDashboard();
+    }
+
+    /* Fast Facebook Login Simulation */
+    function triggerFacebookLogin() {
+      closeAuth();
+      const modal = document.getElementById('facebookMockModal');
+      const nameEl = document.getElementById('fbProfileMockName');
+      nameEl.textContent = authCurrentRole === 'teacher' ? 'أ. مصطفى بلحاج (فيسبوك)' : 'السيد مدير المتوسطة (فيسبوك)';
+      modal.classList.remove('hidden');
+    }
+
+    function closeFbMock() {
+      document.getElementById('facebookMockModal').classList.add('hidden');
+    }
+
+    function confirmFbMockLogin() {
+      closeFbMock();
+      const user = {
+        name: authCurrentRole === 'teacher' ? 'أ. مصطفى بلحاج' : 'إدارة المؤسسة (فيسبوك)',
+        email: 'prof.mustapha.dz@facebook.com',
+        role: authCurrentRole,
+        subject: 'math',
+        level: '4M',
+        school: 'متوسطة الإخوة بوعزيز',
+        authType: 'facebook',
+        avatarText: 'م'
+      };
+
+      if (authCurrentRole === 'teacher') {
+        schoolTeachers.unshift({
+          id: Date.now(),
+          name: user.name,
+          subject: "math",
+          subName: "الرياضيات",
+          level: "4M",
+          method: "Facebook",
+          date: "الآن",
+          status: "مقبول"
+        });
+      }
+
+      currentUser = user;
+      localStorage.setItem('manara_user_session', JSON.stringify(user));
+      updateAuthUI();
+      toast('تم تسجيل الدخول الفوري عبر Facebook بنجاح!', 'success');
+      goToMyDashboard();
+    }
+
+    function updateAuthUI() {
+      const guestDiv = document.getElementById('authNavGuest');
+      const userDiv = document.getElementById('authNavUser');
+      const userNameSpan = document.getElementById('navUserName');
+
+      if (currentUser) {
+        guestDiv.classList.add('hidden');
+        userDiv.classList.remove('hidden');
+        userDiv.classList.add('flex');
+        userNameSpan.textContent = currentUser.name.split(' ')[0] || 'فضائي';
+      } else {
+        guestDiv.classList.remove('hidden');
+        userDiv.classList.add('hidden');
+        userDiv.classList.remove('flex');
+      }
+    }
+
+    function handleLogout() {
+      currentUser = null;
+      localStorage.removeItem('manara_user_session');
+      updateAuthUI();
+      switchView('home');
+      toast('تم تسجيل الخروج من الحساب بنجاح', 'info');
+    }
+
+    function quickGuestAccess(role) {
+      currentUser = {
+        name: role === 'teacher' ? 'أستاذ(ة) زائر' : 'مدير متوسطة (معاينة)',
+        email: 'guest@manara.dz',
+        role: role,
+        subject: 'math',
+        level: '4M',
+        school: 'متوسطة الأمير عبد القادر',
+        authType: 'guest',
+        avatarText: 'ز'
+      };
+      updateAuthUI();
+      toast(`تم الدخول الفوري بصلاحيات: ${role === 'teacher' ? 'الأستاذ' : 'الإدارة'}`, 'info');
+      goToMyDashboard();
+    }
+
+    function goToMyDashboard() {
+      if (!currentUser) {
+        openAuth('login');
+        return;
+      }
+      if (currentUser.role === 'admin') {
+        switchView('admin');
+      } else {
+        switchView('teacher');
+      }
+    }
+
+    /* =========================================================
+       8. TEACHER DASHBOARD LOGIC
+       ========================================================= */
+    function switchTeacherTab(tabId) {
+      document.querySelectorAll('.teacher-tab-content').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('[data-ttab]').forEach(b => b.classList.remove('active'));
+
+      const target = document.getElementById(`tab-${tabId}`);
+      if (target) target.classList.remove('hidden');
+
+      const activeBtn = document.querySelector(`[data-ttab="${tabId}"]`);
+      if (activeBtn) activeBtn.classList.add('active');
+    }
+
+    function renderTeacherDashboard() {
+      if (!currentUser) return;
+      document.getElementById('tSidebarName').textContent = currentUser.name;
+      document.getElementById('tSidebarAvatar').textContent = currentUser.name.charAt(0) || 'أ';
+      
+      const subSelect = document.getElementById('tCurrentSubject');
+      const lvlSelect = document.getElementById('tCurrentLevel');
+      if (currentUser.subject) subSelect.value = currentUser.subject;
+      if (currentUser.level) lvlSelect.value = currentUser.level;
+
+      onTeacherSubLvlChange();
+    }
+
+    function onTeacherSubLvlChange() {
+      const subId = document.getElementById('tCurrentSubject').value || 'math';
+      const lvl = document.getElementById('tCurrentLevel').value || '4M';
+      const sub = SUBJECTS_DATA.find(s => s.id === subId) || SUBJECTS_DATA[0];
+
+      document.getElementById('tSidebarSubLvl').textContent = `${sub.name} • ${getLevelName(lvl)}`;
+      document.getElementById('tGuideSubjectHeading').textContent = `المادة: ${sub.name} — المستوى: ${getLevelName(lvl)}`;
+      
+      // Update competency & sequences
+      const lvlData = sub.levels[lvl] || sub.levels['4M'] || Object.values(sub.levels)[0];
+      document.getElementById('tGuideCompetencySummary').textContent = `الكفاءة الختامية: ${lvlData.competency}`;
+
+      // Populate preview form
+      document.getElementById('docLvlPrev').textContent = getLevelName(lvl);
+      document.getElementById('docSubPrev').textContent = sub.name;
+      document.getElementById('docKafaPrev').textContent = lvlData.competency;
+
+      // Populate Sequences inside Teacher Tab
+      const container = document.getElementById('tSequencesContainer');
+      container.innerHTML = lvlData.sequences.map(seq => `
+        <div class="bg-white rounded-2xl p-5 border border-slate-200 shadow-sm flex flex-wrap items-center justify-between gap-4">
+          <div class="space-y-1">
+            <div class="flex items-center gap-2">
+              <span class="badge-chip bg-emerald-100 text-dzgreen-800 text-xs font-black">المقطع 0${seq.num}</span>
+              <span class="text-xs text-slate-500 font-bold">${seq.duration}</span>
+            </div>
+            <h4 class="font-black text-sm text-slate-900">${seq.title}</h4>
+            <p class="text-xs text-slate-600 font-medium max-w-2xl">${seq.target}</p>
+          </div>
+          <div class="flex gap-2">
+            <button onclick="downloadSequenceWordFile('${sub.id}', '${lvl}', ${seq.num})" class="bg-dzgreen-600 hover:bg-dzgreen-700 text-white font-extrabold px-3.5 py-2 rounded-xl text-xs flex items-center gap-1.5 transition">
+              <i class="fa-solid fa-file-word text-gold-300"></i> تنزيل المذكرة (.doc)
+            </button>
+            <button onclick="loadSequenceIntoEditor('${sub.id}', '${lvl}', ${seq.num})" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-3 py-2 rounded-xl text-xs transition">
+              <i class="fa-solid fa-pen-to-square"></i> تعديل في المحرر
+            </button>
+          </div>
+        </div>
+      `).join('');
+
+      // Populate Annual Plan Tab
+      const annualContainer = document.getElementById('annualPlanContentContainer');
+      annualContainer.innerHTML = `
+        <div class="p-4 bg-emerald-50 rounded-2xl border border-emerald-200 text-xs font-bold text-slate-700 space-y-2">
+          <div class="text-sm font-black text-dzgreen-800">توزيع المقاطع على مدار السنة الدراسية:</div>
+          <div class="grid sm:grid-cols-3 gap-3 pt-2">
+            <div class="bg-white p-3 rounded-xl border">
+              <div class="text-dzgreen-600 font-black mb-1">الفصل الأول (14 أسبوع):</div>
+              <ul class="text-[11px] space-y-1 text-slate-600">
+                <li>• المقطع 01 و 02 من المنهاج</li>
+                <li>• الفرض المحروس الأول: أواخر أكتوبر</li>
+                <li>• اختبارات الفصل 1: بداية ديسمبر</li>
+              </ul>
+            </div>
+            <div class="bg-white p-3 rounded-xl border">
+              <div class="text-dzgreen-600 font-black mb-1">الفصل الثاني (11 أسبوع):</div>
+              <ul class="text-[11px] space-y-1 text-slate-600">
+                <li>• المقطع 03 والمقطع 04</li>
+                <li>• الفرض المحروس الثاني: أواخر جانفي</li>
+                <li>• اختبارات الفصل 2: بداية مارس</li>
+              </ul>
+            </div>
+            <div class="bg-white p-3 rounded-xl border">
+              <div class="text-dzgreen-600 font-black mb-1">الفصل الثالث (09 أسابيع):</div>
+              <ul class="text-[11px] space-y-1 text-slate-600">
+                <li>• المقطع الأخير وحصص الإدماج الكلي</li>
+                <li>• امتحان شهادة BEM الأبيض (التجريبي)</li>
+                <li>• المراجعة الشاملة لشهادة التعليم المتوسط</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      `;
+
+      // Populate Exams Tab
+      const examsContainer = document.getElementById('examsBankContainer');
+      examsContainer.innerHTML = `
+        <div class="border rounded-2xl p-4 bg-slate-50 space-y-2">
+          <div class="badge-chip bg-blue-100 text-blue-800 text-[10px]">فصل 1</div>
+          <h4 class="font-black text-sm text-slate-800">الفرض المحروس رقم 01 — نموذج وزاري</h4>
+          <p class="text-xs text-slate-500 font-medium">موضوع لمدة ساعة واحدة مع شبكة تصحيح مقسمة المعايير.</p>
+          <button onclick="downloadRealExamFile('${sub.name}', '${lvl}', 'الفرض الأول')" class="w-full bg-dzgreen-600 text-white font-black py-2 rounded-xl text-xs flex items-center justify-center gap-1.5">
+            <i class="fa-solid fa-file-word"></i> تحميل الموضوع وسلم التنقيط
+          </button>
+        </div>
+        <div class="border rounded-2xl p-4 bg-slate-50 space-y-2">
+          <div class="badge-chip bg-amber-100 text-amber-800 text-[10px]">فصل 1</div>
+          <h4 class="font-black text-sm text-slate-800">اختبار الفصل الأول الرسمي</h4>
+          <p class="text-xs text-slate-500 font-medium">موضوع مدته ساعتان يشمل تمرينين ووضعية إدماجية مركبة.</p>
+          <button onclick="downloadRealExamFile('${sub.name}', '${lvl}', 'اختبار الفصل الأول')" class="w-full bg-dzgreen-600 text-white font-black py-2 rounded-xl text-xs flex items-center justify-center gap-1.5">
+            <i class="fa-solid fa-file-word"></i> تحميل الموضوع وسلالم التصحيح
+          </button>
+        </div>
+        <div class="border rounded-2xl p-4 bg-slate-50 space-y-2">
+          <div class="badge-chip bg-red-100 text-red-800 text-[10px]">BEM تجريبي</div>
+          <h4 class="font-black text-sm text-slate-800">امتحان شهادة التعليم المتوسط الأبيض</h4>
+          <p class="text-xs text-slate-500 font-medium">مطابق تماماً لمواصفات الديوان الوطني للامتحانات والمسابقات ONEC.</p>
+          <button onclick="downloadRealExamFile('${sub.name}', '${lvl}', 'BEM أبيض')" class="w-full bg-dzgreen-600 text-white font-black py-2 rounded-xl text-xs flex items-center justify-center gap-1.5">
+            <i class="fa-solid fa-file-word"></i> تحميل الامتحان النموذجي
+          </button>
+        </div>
+      `;
+    }
+
+    function loadSequenceIntoEditor(subId, lvl, seqNum) {
+      const sub = SUBJECTS_DATA.find(s => s.id === subId) || SUBJECTS_DATA[0];
+      const lvlData = sub.levels[lvl] || sub.levels['4M'];
+      const seq = lvlData.sequences.find(s => s.num === seqNum) || lvlData.sequences[0];
+
+      document.getElementById('lpSequence').value = `المقطع 0${seq.num}: ${seq.title}`;
+      document.getElementById('lpResource').value = seq.resources.join(' - ');
+      document.getElementById('lpNumDate').value = `مذكرة رقم: 0${seq.num} • التاريخ: ${new Date().toLocaleDateString('ar-DZ')}`;
+      
+      switchTeacherTab('t-docs');
+      toast('تم نقل بيانات المقطع إلى محرر المذكرات!', 'info');
+    }
+
+    /* =========================================================
+       9. ADMIN DASHBOARD LOGIC & CHART
+       ========================================================= */
+    let adminChartInstance = null;
+
+    function switchAdminTab(tabId) {
+      document.querySelectorAll('.admin-tab-content').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('[data-atab]').forEach(b => b.classList.remove('active'));
+
+      const target = document.getElementById(`tab-${tabId}`);
+      if (target) target.classList.remove('hidden');
+
+      const activeBtn = document.querySelector(`[data-atab="${tabId}"]`);
+      if (activeBtn) activeBtn.classList.add('active');
+    }
+
+    function renderAdminDashboard() {
+      if (!currentUser) return;
+      document.getElementById('aSidebarName').textContent = currentUser.name;
+      
+      renderAdminTeachersTable();
+      renderAdminChart();
+    }
+
+    function renderAdminTeachersTable() {
+      const tbody = document.getElementById('adminTeachersTableBody');
+      if (!tbody) return;
+
+      let pending = 0;
+      tbody.innerHTML = schoolTeachers.map(t => {
+        if (t.status === 'معلق') pending++;
+        return `
+          <tr class="hover:bg-slate-50 transition border-b border-slate-100">
+            <td class="p-3 text-slate-800 font-black">${t.name}</td>
+            <td class="p-3 text-slate-600">${t.subName} (${getLevelName(t.level)})</td>
+            <td class="p-3">
+              <span class="inline-flex items-center gap-1 ${t.method === 'Facebook' ? 'text-blue-600' : 'text-slate-600'}">
+                <i class="fa-${t.method === 'Facebook' ? 'brands fa-facebook' : 'solid fa-envelope'}"></i>
+                ${t.method}
+              </span>
+            </td>
+            <td class="p-3 text-slate-400 font-medium">${t.date}</td>
+            <td class="p-3">
+              <span class="badge-chip ${t.status === 'مقبول' ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'} text-[10px]">
+                ${t.status}
+              </span>
+            </td>
+            <td class="p-3 text-center">
+              ${t.status === 'معلق' ? `
+                <button onclick="approveTeacher(${t.id})" class="bg-dzgreen-600 hover:bg-dzgreen-700 text-white px-3 py-1 rounded-lg text-xs font-bold transition">
+                  تأشير ومصادقة
+                </button>
+              ` : `
+                <span class="text-emerald-700 text-xs font-bold"><i class="fa-solid fa-check-double"></i> مفعل بالمنظومة</span>
+              `}
+            </td>
+          </tr>
+        `;
+      }).join('');
+
+      const badge = document.getElementById('badgePendingCount');
+      if (badge) badge.textContent = pending;
+      const totalEl = document.getElementById('adminTotalActiveTeachers');
+      if (totalEl) totalEl.textContent = schoolTeachers.filter(x => x.status === 'مقبول').length + 35;
+    }
+
+    function approveTeacher(id) {
+      const t = schoolTeachers.find(x => x.id === id);
+      if (t) {
+        t.status = 'مقبول';
+        renderAdminTeachersTable();
+        toast(`تمت المصادقة على حساب: ${t.name}`, 'success');
+      }
+    }
+
+    function renderAdminChart() {
+      const ctx = document.getElementById('adminSubjectsChart');
+      if (!ctx) return;
+      if (adminChartInstance) adminChartInstance.destroy();
+
+      adminChartInstance = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['الرياضيات', 'اللغة العربية', 'الفرنسية', 'الإنجليزية', 'العلوم الطبيعية', 'الفيزياء', 'الاجتماعيات', 'الإسلامية'],
+          datasets: [{
+            label: 'عدد الأساتذة المزاولين',
+            data: [7, 8, 5, 4, 4, 4, 5, 3],
+            backgroundColor: '#0B6B4A',
+            borderRadius: 8
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false }
+          },
+          scales: {
+            y: { beginAtZero: true, grid: { color: '#f1f5f9' } },
+            x: { grid: { display: false } }
+          }
+        }
+      });
+    }
+
+    /* =========================================================================================
+       10. REAL FILE DOWNLOAD ENGINE (BLOB-BASED SUBSTANTIVE WORD & PRINTABLE DOCUMENTS)
+       ========================================================================================= */
+
+    /**
+     * Downloads an actual, full Microsoft Word file (.doc HTML-compliant format)
+     * containing authentic ministerial header, watermark, stamps, sequences, and tables.
+     */
+    function triggerRealBlobDownload(filename, htmlContent) {
+      const fullDoc = `
+        <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+        <head>
+          <meta charset='utf-8'>
+          <title>${filename}</title>
+          <style>
+            body { font-family: 'Times New Roman', 'Arial', sans-serif; direction: rtl; text-align: right; margin: 20px; }
+            .header-table { width: 100%; border-bottom: 2px solid #000; margin-bottom: 15px; }
+            .header-table td { padding: 4px; vertical-align: top; }
+            h2, h3, h4 { color: #08573c; margin: 5px 0; }
+            .meta-box { border: 1px solid #0B6B4A; background-color: #f4fbf7; padding: 10px; margin-bottom: 15px; }
+            table.content-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+            table.content-table th { background-color: #0B6B4A; color: #ffffff; border: 1px solid #333; padding: 8px; font-size: 13px; }
+            table.content-table td { border: 1px solid #666; padding: 8px; font-size: 12px; }
+            .stamp-box { border: 2px dashed #0B6B4A; color: #0B6B4A; font-weight: bold; padding: 8px; display: inline-block; margin-top: 15px; }
+            .footer-notes { font-size: 10px; color: #666; margin-top: 30px; border-top: 1px dashed #aaa; padding-top: 8px; }
+          </style>
+        </head>
+        <body>
+          <table class="header-table">
+            <tr>
+              <td style="width: 35%; text-align: right; font-size: 11px;">
+                الجمهورية الجزائرية الديمقراطية الشعبية<br>
+                وزارة التربية الوطنية<br>
+                مديرية التربية — الطور المتوسط
+              </td>
+              <td style="width: 30%; text-align: center;">
+                <h3 style="margin:0;">منهاج الجيل الثاني</h3>
+                <span style="font-size:10px; color:#555;">الموسم الدراسي: 2025/2026</span>
+              </td>
+              <td style="width: 35%; text-align: left; font-size: 11px;">
+                مفتشية التعليم المتوسط<br>
+                وثيقة بيداغوجية رسمية<br>
+                المصدر: منارة المتوسط
+              </td>
+            </tr>
+          </table>
+
+          ${htmlContent}
+
+          <div class="footer-notes">
+            تم استخراج هذا الملف رسمياً من منصة «منارة المتوسط» • مطابق لمنهاج وزارة التربية الوطنية — الجيل الثاني • قابل للتعديل والطباعة والتأشير من طرف السيد المفتش.
+          </div>
+        </body>
+        </html>
+      `;
+
+      const blob = new Blob(['\ufeff', fullDoc], { type: 'application/msword;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+
+      toast(`تم تنزيل الملف الفعلي: ${filename} بنجاح!`, 'success');
+    }
+
+    // 1. Download sample lesson plan for a subject
+    function downloadSampleDoc(subjectId, level) {
+      const sub = SUBJECTS_DATA.find(s => s.id === subjectId) || SUBJECTS_DATA[0];
+      const lvlData = sub.levels[level] || Object.values(sub.levels)[0];
+      const seq = lvlData.sequences[0];
+
+      const html = `
+        <div style="text-align: center; margin-bottom: 20px;">
+          <h2 style="color: #0B6B4A; text-decoration: underline;">مذكرة بيداغوجية نموذجية للتعلم الصفي (الجيل الثاني)</h2>
+          <div style="font-size: 14px; font-weight: bold;">المادة: ${sub.name} — المستوى: ${getLevelName(level)}</div>
+        </div>
+
+        <div class="meta-box">
+          <table style="width: 100%;">
+            <tr>
+              <td><strong>الميدان:</strong> الأنشطة التعليمية المقررة</td>
+              <td><strong>الحجم الساعي:</strong> 01 ساعة</td>
+              <td><strong>رقم المذكرة:</strong> 01</td>
+            </tr>
+            <tr>
+              <td colspan="3" style="padding-top: 6px;">
+                <strong>المقطع التعلمي 01:</strong> ${seq.title}
+              </td>
+            </tr>
+            <tr>
+              <td colspan="3" style="padding-top: 6px;">
+                <strong>المورد المعرفي:</strong> ${seq.resources.join(' • ')}
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <div>
+          <h4>أولاً: الكفاءة الشاملة والكفاءة المستهدفة</h4>
+          <p style="background: #f9f9f9; padding: 8px; border-right: 3px solid #0B6B4A;">
+            <strong>الكفاءة الختامية:</strong> ${lvlData.competency}<br>
+            <strong>مركبات الكفاءة:</strong> ${seq.target}
+          </p>
+        </div>
+
+        <h4>ثانياً: سيرورة الحصة التعليمية التعلمية</h4>
+        <table class="content-table">
+          <thead>
+            <tr>
+              <th style="width: 20%;">المرحلة والزمن</th>
+              <th style="width: 55%;">النشاط التعليمي التعلمي (الأستاذ والمتعلم)</th>
+              <th style="width: 25%;">التقويم ومؤشرات النجاح</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>وضعية الانطلاق</strong><br>(10 دقائق)</td>
+              <td>
+                - توجيه المتعلمين نحو وضعية تحفيزية مستوحاة من المحيط اليومي للمتعلم.<br>
+                - مراجعة المكتسبات القبلية ذات الصلة بالمورد المعرفي.<br>
+                - إبراز الخلل أو التساؤل المثير الذي يتطلب المعرفة الجديدة.
+              </td>
+              <td>
+                <strong>تقويم تشخيصي:</strong><br>
+                - يسترجع القواعد السابقة.<br>
+                - ينخرط في طرح التساؤل الإشكالي.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>بناء التعلمات</strong><br>(35 دقيقة)</td>
+              <td>
+                - تقديم نص النشاط ومطالبة التلاميذ بالبحث الفردي ثم الفوجي.<br>
+                - توجيه التفكير الصفي نحو اكتشاف الخاصية أو القاعدة العلمية.<br>
+                - تدوين النتيجة الرياضية/اللغوية وتقديم أمثلة تطبيقية مدعمة.<br>
+                - حوصلة المفهوم وتدوينه على كراس التلميذ.
+              </td>
+              <td>
+                <strong>تقويم تكويني مستمر:</strong><br>
+                - يحلل المعطيات بصورة صحيحة.<br>
+                - يستعمل المصطلحات الدقيقة الخاصة بالمادة.
+              </td>
+            </tr>
+            <tr>
+              <td><strong>استثمار المكتسبات</strong><br>(15 دقيقة)</td>
+              <td>
+                - وضعية تقويمية فورية لحل تمرين من الكتاب المدرسي.<br>
+                - تشخيص الفروق الفردية وإدراج المعالجة الفورية للمتعثرين.
+              </td>
+              <td>
+                <strong>تقويم تحصيلي مرحلي:</strong><br>
+                - ينجز التطبيق بشكل فردي سليم.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <br>
+        <table style="width: 100%; margin-top: 30px;">
+          <tr>
+            <td style="text-align: right; width: 50%;">
+              <strong>توقيع الأستاذ(ة):</strong><br><br>
+              ............................................
+            </td>
+            <td style="text-align: left; width: 50%;">
+              <strong>تأشيرة وملاحظات السيد مفتش المادة:</strong><br><br>
+              ............................................
+            </td>
+          </tr>
+        </table>
+      `;
+
+      triggerRealBlobDownload(`مذكرة_${sub.name}_${level}_نموذج.doc`, html);
+    }
+
+    // 2. Download specific sequence Word file
+    function downloadSequenceWordFile(subjectId, level, seqNum) {
+      const sub = SUBJECTS_DATA.find(s => s.id === subjectId) || SUBJECTS_DATA[0];
+      const lvlData = sub.levels[level] || sub.levels['4M'];
+      const seq = lvlData.sequences.find(s => s.num === seqNum) || lvlData.sequences[0];
+
+      const html = `
+        <div style="text-align:center;">
+          <h2 style="color: #0B6B4A;">بطاقة المقطع التعلمي رقم 0${seq.num}</h2>
+          <h3>المادة: ${sub.name} | المستوى: ${getLevelName(level)}</h3>
+        </div>
+
+        <div class="meta-box">
+          <p><strong>عنوان المقطع:</strong> ${seq.title}</p>
+          <p><strong>الحجم الساعي المخصص للمقطع:</strong> ${seq.duration}</p>
+          <p><strong>الكفاءة المستهدفة:</strong> ${seq.target}</p>
+        </div>
+
+        <h3>الموارد المعرفية والمفاهيمية المقررة وزارياً:</h3>
+        <ul>
+          ${seq.resources.map(r => `<li style="font-size: 13px; margin-bottom: 5px;">${r}</li>`).join('')}
+        </ul>
+
+        <h3>الوضعية المشكلة الانطلاقية الأم:</h3>
+        <p style="background: #fafafa; border: 1px solid #ddd; padding: 12px; font-size: 13px;">
+          ${seq.assessment}
+        </p>
+
+        <h3>شبكة التقويم والمعايير الخاصة بالمقطع:</h3>
+        <table class="content-table">
+          <tr>
+            <th>المعيار</th>
+            <th>المؤشرات البيداغوجية</th>
+            <th>التقدير</th>
+          </tr>
+          <tr>
+            <td>م1: الوجاهة والملاءمة</td>
+            <td>فهم سليم للسياق وترجمة التعليمة إلى خطة حل دقيقة.</td>
+            <td>تحكم أقصى / مقبول</td>
+          </tr>
+          <tr>
+            <td>م2: الاستعمال السليم لأدوات المادة</td>
+            <td>تطبيق القواعد، القوانين والمصطلحات الخاصة بالمورد.</td>
+            <td>تحكم أقصى / مقبول</td>
+          </tr>
+          <tr>
+            <td>م3: الانسجام والمنطق</td>
+            <td>تسلسل الأفكار والنتائج وتبرير المراحل خطوة بخطوة.</td>
+            <td>تحكم أقصى / مقبول</td>
+          </tr>
+          <tr>
+            <td>م4: الإتقان والتمايز (معيار الجودة)</td>
+            <td>نظافة ورقة الإجابة، وضوح الخط ودقة الرسم والتنظيم.</td>
+            <td>علامة التميز</td>
+          </tr>
+        </table>
+      `;
+
+      triggerRealBlobDownload(`بطاقة_مقطع_${seq.num}_${sub.name}_${level}.doc`, html);
+    }
+
+    // 3. Download custom edited lesson plan from Dashboard
+    function generateAndDownloadCustomDoc() {
+      const teacherName = document.getElementById('lpTeacherName').value;
+      const school = document.getElementById('lpSchool').value;
+      const numDate = document.getElementById('lpNumDate').value;
+      const seq = document.getElementById('lpSequence').value;
+      const res = document.getElementById('lpResource').value;
+      const hours = document.getElementById('lpHours').value;
+      const docHtml = document.getElementById('printableDocPaper').innerHTML;
+
+      const fullHtml = `
+        <div style="text-align: center; margin-bottom: 10px;">
+          <h3>${school}</h3>
+          <div>الأستاذ(ة): ${teacherName} • ${numDate}</div>
+          <div style="font-weight:bold; color:#0B6B4A; margin-top:5px;">${seq}</div>
+          <div style="font-size:12px;">المورد: ${res} | المدة: ${hours}</div>
+        </div>
+        <hr style="border: 1px solid #0B6B4A;">
+        <div>${docHtml}</div>
+      `;
+
+      triggerRealBlobDownload(`مذكرة_بيداغوجية_مخصصة_${teacherName}.doc`, fullHtml);
+    }
+
+    function printCustomDoc() {
+      window.print();
+    }
+
+    // 4. Download Inspector Pack
+    function downloadInspectorPack() {
+      const html = `
+        <div style="text-align:center;">
+          <h2 style="color:#0B6B4A;">حقيبة زيارة المفتش البيداغوجي (المتوسط)</h2>
+          <p>الدليل الشامل للدفاتر والوثائق الرسمية المطلوبة قانونياً</p>
+        </div>
+
+        <div class="meta-box">
+          <strong>الجمهورية الجزائرية الديمقراطية الشعبية — مفتشية التعليم المتوسط</strong><br>
+          الموسم: 2025/2026 | مطابقة لمعايير الزيارة والتثبيت (الترسيم)
+        </div>
+
+        <h3>أولاً: الدفاتر القانونية الخمسة (مواصفات الفحص):</h3>
+        <table class="content-table">
+          <tr>
+            <th>الدفتر</th>
+            <th>الشروط القانونية والتنظيمية</th>
+            <th>الملاحظة</th>
+          </tr>
+          <tr>
+            <td>1. دفتر التحضير اليومي</td>
+            <td>مذكرات مرقمة ومؤرخة ومطابقة لتسلسل الحصص المنجزة فعلياً بالقسم.</td>
+            <td>وثيقة رئيسية</td>
+          </tr>
+          <tr>
+            <td>2. دفتر النصوص المعتمد</td>
+            <td>مرقم ومختوم من الإدارة، بدون تشطيب، متطابق حرفياً مع دفتر التحضير.</td>
+            <td>وثيقة محاسبة</td>
+          </tr>
+          <tr>
+            <td>3. دفتر التنقيط والغيابات</td>
+            <td>رصد علامات المراقبة المستمرة، الفروض، وسجل حضور وغياب المتعلمين.</td>
+            <td>إجباري</td>
+          </tr>
+          <tr>
+            <td>4. دفتر التكوين والندوات</td>
+            <td>يتضمن تقارير الندوات التربوية الداخلية والأيام التكوينية للمقاطعة.</td>
+            <td>مؤشر التطوير</td>
+          </tr>
+          <tr>
+            <td>5. دفتر المعالجة البيداغوجية</td>
+            <td>شبكة تفريغ نتائج الفروض وتشخيص الفئات المتعثرة وخطة الدعم.</td>
+            <td>مؤشر العناية</td>
+          </tr>
+        </table>
+
+        <h3>ثانياً: الأسئلة الأكثر طرحاً في جلسة مناقشة المفتش وأجوبتها النموذجية:</h3>
+        <ol style="font-size: 13px; line-height: 1.8;">
+          <li><strong>س: كيف تم بناء وضعية الانطلاق في درس اليوم؟</strong><br>
+          ج: تم بناؤها انطلاقاً من واقع التلميذ المعاش ومكتسباته القبلية لخلق صراع معرفي محفز يستدعي المورد الجديد.</li>
+          <li><strong>س: كيف تراعي الفروق الفردية داخل القسم المكتظ؟</strong><br>
+          ج: عبر العمل الفوجي المتمايز، التدرج في صعوبة الأسئلة، وتخصيص مهام قيادية للمتعثرين لتحفيزهم.</li>
+          <li><strong>س: أين موضع حصة المعالجة البيداغوجية من المخطط السنوي؟</strong><br>
+          ج: تبرمج مباشرة بعد تصحيح الفروض المحروسة اعتماداً على شبكة تصحيح المعايير المسجلة في دفتر المعالجة.</li>
+        </ol>
+      `;
+
+      triggerRealBlobDownload(`حقيبة_المفتش_الرسمية_الكاملة.doc`, html);
+    }
+
+    function printInspectorChecklist() {
+      window.print();
+    }
+
+    // 5. Specific inspector files download
+    function downloadSpecificInspectorFile(fileKey) {
+      let title = "وثيقة_رسمية";
+      let content = "";
+
+      if (fileKey === 'text_notebook') {
+        title = "دفتر_النصوص_النموذجي";
+        content = `
+          <h2>نموذج تنظيم وتأطير دفتر النصوص الرسمي</h2>
+          <p>الصفحة الأولى: البيانات الشخصية للأستاذ والجدول الأسبوعي للحصص.</p>
+          <table class="content-table">
+            <tr><th>اليوم والتاريخ</th><th>الساعة</th><th>القسم</th><th>المقطع والمورد المعرفي المنجز</th><th>العمل المطلوب للمنزل</th><th>تأشيرة الأستاذ</th></tr>
+            <tr><td>الأحد 19 أكتوبر 2025</td><td>08:00 - 09:00</td><td>4م1</td><td>المقطع 1: خوارزمية إقليدس لحساب PGCD</td><td>تمرين 14 ص 14</td><td>موقع</td></tr>
+          </table>
+        `;
+      } else if (fileKey === 'remedial_notebook') {
+        title = "دفتر_المعالجة_البيداغوجية";
+        content = `
+          <h2>دفتر المعالجة البيداغوجية وتشخيص التعثرات</h2>
+          <table class="content-table">
+            <tr><th>اسم التلميذ</th><th>القسم</th><th>الخلل المشخص</th><th>نوع النشاط العلاجي</th><th>النتيجة بعد المعالجة</th></tr>
+            <tr><td>محمد س.</td><td>4م2</td><td>صعوبة في قسمة الكسور</td><td>بطاقة دعم فردية + تكرار الخوارزمية</td><td>تحسن ملحوظ</td></tr>
+          </table>
+        `;
+      } else {
+        title = "شبكة_تقويم_الأداء_البيداغوجي";
+        content = `
+          <h2>شبكة تقويم أداء الأستاذ أثناء الحصة الصفية (مفتشية التربية)</h2>
+          <p>المعايير المعتمدة: إدارة الصف (4 ن)، إتقان المادة العلمية (6 ن)، توظيف طرائق التدريس النشطة (5 ن)، التقويم الصفي (5 ن).</p>
+        `;
+      }
+
+      triggerRealBlobDownload(`${title}.doc`, content);
+    }
+
+    // 6. Annual distribution download
+    function downloadAnnualDistribution() {
+      const subId = document.getElementById('guideSubjectSelect').value || 'math';
+      const sub = SUBJECTS_DATA.find(s => s.id === subId) || SUBJECTS_DATA[0];
+
+      const html = `
+        <div style="text-align:center;">
+          <h2 style="color:#0B6B4A;">التوزيع السنوي لبناء التعلمات — منهاج الجيل الثاني</h2>
+          <h3>المادة: ${sub.name} — المستوى: الرابعة متوسط (محيّن 2025/2026)</h3>
+        </div>
+        <table class="content-table">
+          <thead>
+            <tr>
+              <th>الشهر</th>
+              <th>الأسبوع</th>
+              <th>المقطع التعلمي</th>
+              <th>الموارد المقررة للحصة</th>
+              <th>الملاحظات والعطل الرسمية</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>سبتمبر</td><td>الأسبوع 1-2</td><td>التقويم التشخيصي</td><td>تثبيت المكتسبات القبلية واختبار تشخيصي</td><td>انطلاق الموسم</td></tr>
+            <tr><td>أكتوبر</td><td>الأسبوع 3-4</td><td>المقطع 01</td><td>الأعداد الطبيعية والأعداد الناطقة و PGCD</td><td>تحضير الفرض الأول</td></tr>
+            <tr><td>نوفمبر</td><td>الأسبوع 1-2</td><td>المقطع 02</td><td>الحساب على الجذور والنسب المثلثية</td><td>عطلة الخريف</td></tr>
+            <tr><td>ديسمبر</td><td>الأسبوع 1</td><td>التقويم الفصلي</td><td>اختبارات الفصل الأول وتصحيحها</td><td>عطلة الشتاء</td></tr>
+          </tbody>
+        </table>
+      `;
+
+      triggerRealBlobDownload(`التوزيع_السنوي_${sub.name}_2025_2026.doc`, html);
+    }
+
+    // 7. Exam download
+    function downloadRealExamFile(subName, lvl, examType) {
+      const html = `
+        <div style="text-align:center;">
+          <h3 style="margin:0;">الجمهورية الجزائرية الديمقراطية الشعبية — مديرية التربية</h3>
+          <h2 style="color:#0B6B4A; margin: 5px 0;">${examType} في مادة ${subName}</h2>
+          <div style="font-weight:bold;">المستوى: ${getLevelName(lvl)} • المدة: ساعتان</div>
+        </div>
+        <hr style="border-top: 2px dashed #0B6B4A; margin: 15px 0;">
+
+        <h4>الجزء الأول (12 نقطة):</h4>
+        <div style="margin-bottom: 15px;">
+          <strong>التمرين الأول (06 نقاط):</strong><br>
+          1. احسب القاسم المشترك الأكبر للعددين 1053 و 832 موضحاً خطوات الحساب.<br>
+          2. اكتب الكسر 1053 / 832 على شكل كسر غير قابل للاختزال.<br>
+          3. لتكن العبارة A حيث: A = √(1053) - 2√(832) + √(52). اكتب A على الشكل a√13 حيث a عدد نسبي.
+        </div>
+
+        <div style="margin-bottom: 15px;">
+          <strong>التمرين الثاني (06 نقاط):</strong><br>
+          لتكن العبارة الجبرية E حيث: E = (2x - 3)² - (2x - 3)(x + 1)<br>
+          1. انشر وبسط العبارة E.<br>
+          2. حلل العبارة E إلى جداء عاملين من الدرجة الأولى.<br>
+          3. حل المعادلة: (2x - 3)(x - 4) = 0.
+        </div>
+
+        <h4>الجزء الثاني: الوضعية الإدماجية المركبة (08 نقاط):</h4>
+        <p style="background: #f9f9f9; padding: 10px; border: 1px solid #ccc;">
+          يمتلك فلاح قطعة أرض مستطيلة الشكل يريد تقسيمها إلى مربعات متماثلة ومتساوية بأكبر طول ضلع ممكن لغرس شجيرات الزيتون... (المطلوب تحديد طول ضلع المربع وتكلفة التسييج الكلية).
+        </p>
+
+        <br>
+        <div class="stamp-box">سلم التنقيط الوزاري وشبكة التصحيح مرفقة خلف الصفحة</div>
+      `;
+
+      triggerRealBlobDownload(`موضوع_${examType}_${subName}_${lvl}.doc`, html);
+    }
+
+    // 8. Official Syllabus PDF-simulated Doc download
+    function downloadOfficialSyllabus() {
+      const html = `
+        <div style="text-align:center;">
+          <h2 style="color:#0B6B4A;">المنهاج الرسمي لوزارة التربية الوطنية (الجيل الثاني)</h2>
+          <h3>المفتشية العامة للبيداغوجيا — الطور المتوسط الكامل</h3>
+        </div>
+        <div class="meta-box">
+          وثيقة مرجعية ملزمة لجميع أساتذة التعليم المتوسط عبر القطر الوطني الجزائري.
+        </div>
+        <h3>مرتكزات المقاربة بالكفاءات:</h3>
+        <p>
+          1. المتعلم هو الفاعل الأساسي في بناء تعلماته من خلال وضعيات مشكلة دالة.<br>
+          2. الانتقال من منطق حشو المعارف إلى منطق تجنيد الموارد لحل مشكلات واقعية.<br>
+          3. إدماج تكنولوجيات الإعلام والاتصال والتربية على المواطنة والهوية الوطنية.
+        </p>
+      `;
+
+      triggerRealBlobDownload(`المنهاج_الرسمي_الجيل_الثاني_الجزائر.doc`, html);
+    }
+
+    function downloadFullTeacherDossier() {
+      downloadSampleDoc('math', '4M');
+      setTimeout(() => downloadInspectorPack(), 600);
+    }
+
+    // 9. Admin Reports Download
+    function downloadAdminReportSample() {
+      const html = `
+        <div style="text-align:center;">
+          <h2 style="color:#0B6B4A;">تقرير الوضعية البيداغوجية الشهرية للمتوسطة</h2>
+          <h3>الموجه إلى: السيد مدير التربية للولاية — مصلحة التمدرس والامتحانات</h3>
+        </div>
+        <div class="meta-box">
+          <strong>المؤسسة:</strong> متوسطة الشهيد زبانة | <strong>الشهر:</strong> أكتوبر 2025
+        </div>
+        <table class="content-table">
+          <tr><th>المؤشر الإداري والبيداغوجي</th><th>العدد / النسبة</th><th>الملاحظة والتقييم</th></tr>
+          <tr><td>تعداد الأساتذة المزاولين</td><td>42 أستاذ(ة)</td><td>تغطية بنسبة 100% لكافة الأفواج</td></tr>
+          <tr><td>تعداد الأفواج التربوية المتمدرسة</td><td>18 فوج (من 1م إلى 4م)</td><td>معدل 34 تلميذاً في الفوج</td></tr>
+          <tr><td>نسبة تقدم المناهج التعليمية</td><td>100% وفق المخطط السنوي</td><td>لا يوجد أي تأخر مسجل</td></tr>
+          <tr><td>نسبة غيابات الأساتذة</td><td>0.8% فقط</td><td>انضباط عالي وتأطير تام</td></tr>
+          <tr><td>حالة دفاتر النصوص والمذكرات</td><td>مؤشرة ومختومة أسبوعياً</td><td>تطابق تام مع التحضير الصفي</td></tr>
+        </table>
+        <br>
+        <div style="text-align:left; margin-top:30px;">
+          <strong>ختم وتوقيع السيد مدير المؤسسة:</strong><br><br>
+          ...................................................
+        </div>
+      `;
+
+      triggerRealBlobDownload(`التقرير_الشهري_الوزاري_للمتوسطة.doc`, html);
+    }
+
+    function downloadAdminTeachersListWord() {
+      const html = `
+        <div style="text-align:center;">
+          <h2 style="color:#0B6B4A;">قائمة الحالة الإدارية لأساتذة التعليم المتوسط</h2>
+          <p>الموسم الدراسي: 2025/2026</p>
+        </div>
+        <table class="content-table">
+          <tr>
+            <th>الرقم</th>
+            <th>اسم ولقب الأستاذ(ة)</th>
+            <th>المادة المدرسة</th>
+            <th>الطور الأكثر تدريساً</th>
+            <th>الحالة الإدارية</th>
+          </tr>
+          ${schoolTeachers.map((t, idx) => `
+            <tr>
+              <td>${idx + 1}</td>
+              <td>${t.name}</td>
+              <td>${t.subName}</td>
+              <td>${getLevelName(t.level)}</td>
+              <td>${t.status === 'مقبول' ? 'مرسم ومثبت' : 'قيد المتابعة'}</td>
+            </tr>
+          `).join('')}
+        </table>
+      `;
+
+      triggerRealBlobDownload(`قائمة_الأساتذة_الإدارية.doc`, html);
+    }
+
+    /* =========================================================
+       11. TOAST NOTIFICATIONS HELPER
+       ========================================================= */
+    function toast(message, type = 'info') {
+      const container = document.getElementById('toastContainer');
+      if (!container) return;
+
+      const toastEl = document.createElement('div');
+      toastEl.className = `p-4 rounded-2xl shadow-elevation text-xs font-black flex items-center gap-3 transition-all duration-300 transform translate-y-4 opacity-0 pointer-events-auto border ${
+        type === 'success' ? 'bg-[#032319] text-white border-emerald-500' :
+        type === 'error' ? 'bg-red-900 text-white border-red-500' :
+        'bg-slate-900 text-white border-slate-700'
+      }`;
+
+      const icon = type === 'success' ? 'fa-circle-check text-emerald-400 text-base' :
+                   type === 'error' ? 'fa-circle-exclamation text-red-400 text-base' :
+                   'fa-circle-info text-gold-400 text-base';
+
+      toastEl.innerHTML = `
+        <i class="fa-solid ${icon}"></i>
+        <div class="flex-1 leading-snug">${message}</div>
+      `;
+
+      container.appendChild(toastEl);
+
+      // Animate in
+      requestAnimationFrame(() => {
+        toastEl.classList.remove('translate-y-4', 'opacity-0');
+      });
+
+      // Remove after 3.5s
+      setTimeout(() => {
+        toastEl.classList.add('opacity-0', 'translate-y-2');
+        setTimeout(() => toastEl.remove(), 300);
+      }, 3500);
+    }
+  </script>
+
+</body>
+</html>
